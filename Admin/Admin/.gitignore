@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+**/node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Build
+build/
+dist/
+coverage/
+
+# Secrets
+*.pem
+*.key
+
+# Temporary
+*.zip
+
+# VS Code
+.vscode/

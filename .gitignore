@@ -1,0 +1,15 @@
+node_modules/
+**/node_modules/
+.env
+.env.*
+!.env.example
+*.log
+build/
+dist/
+coverage/
+*.pem
+*.key
+.vscode/
+
+# File tạm của Word
+~$*.docx
