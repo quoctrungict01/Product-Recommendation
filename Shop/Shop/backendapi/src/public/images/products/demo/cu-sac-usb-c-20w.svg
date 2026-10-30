@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Củ sạc nhanh USB-C 20W">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#713f12"/><stop offset="1" stop-color="#eab308"/></linearGradient></defs>
+  <rect width="600" height="600" rx="36" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round">
+  <rect x="220" y="170" width="160" height="190" rx="24"/>
+  <path d="M262 170 V120 M338 170 V120" stroke-linecap="round"/>
+  <path d="M308 215 L272 275 H306 L292 325 L332 255 H298 Z" fill="#fff" stroke-width="4"/></g>
+  <g fill="#fff" font-family="Segoe UI, Roboto, Arial, sans-serif">
+  <text x="300" y="452" text-anchor="middle" font-size="32" font-weight="700">Củ sạc nhanh USB-C 20W</text>
+  <text x="300" y="504" text-anchor="middle" font-size="20" opacity=".75">Sạc &amp; Cáp · Ảnh minh họa</text>
+  </g>
+</svg>

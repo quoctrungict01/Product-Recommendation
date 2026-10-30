@@ -1,0 +1,441 @@
+{
+  "generatorVersion": "trungshop-research-generator/1.0.0",
+  "generatedAt": "2026-10-26T10:51:59.749Z",
+  "demoGR2": {
+    "demoChecksum": "d1eb602b9280f67944583f56b7e9f832539a7925",
+    "demoChecksumUnchanged": true,
+    "r1ReproducesDemoGenerator": true
+  },
+  "datasets": [
+    {
+      "name": "R1-seed20261101-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261101,
+      "orderCount": 20000,
+      "configSha1": "406eb2ac3f99e7827dd14a94fe7e0fa30ae32f9e",
+      "checksum": "e84322bb341aeb1d1ba300c07f06479f79de67dc",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261101,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8035,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.54465,
+        "ordersPerProduct": {
+          "min": 289,
+          "median": 684,
+          "max": 2662
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:46:57.976Z",
+          "to": "2026-10-25T16:56:57.127Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261101, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261102-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261102,
+      "orderCount": 20000,
+      "configSha1": "d9a8029569855292485cd136fd40025f9e6ce834",
+      "checksum": "44fe1e131afbb1862217d54b1e75bb6da30f2c82",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261102,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.82455,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.56095,
+        "ordersPerProduct": {
+          "min": 273,
+          "median": 700,
+          "max": 2778
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:15:20.324Z",
+          "to": "2026-10-25T16:50:29.582Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261102, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261103-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261103,
+      "orderCount": 20000,
+      "configSha1": "4e15e37d68e75b303871cf1d4c26df342f4f87ed",
+      "checksum": "a1ba0842b514a0d90c6f8c031f44f854a4bde055",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261103,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8262,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.5513,
+        "ordersPerProduct": {
+          "min": 281,
+          "median": 720,
+          "max": 2708
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:00:13.640Z",
+          "to": "2026-10-25T16:27:40.229Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261103, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261104-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261104,
+      "orderCount": 20000,
+      "configSha1": "5835fb7e7013b402d29ce2d46a41aff7e7dc6c83",
+      "checksum": "0bfe7974f9f9c3b7f8a5fb95fde7d5db85b4f516",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261104,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8096,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.5459,
+        "ordersPerProduct": {
+          "min": 266,
+          "median": 677,
+          "max": 2819
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:19:37.760Z",
+          "to": "2026-10-25T16:15:49.903Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261104, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261105-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261105,
+      "orderCount": 20000,
+      "configSha1": "5577f2d65be57750da436b2fad6aca3520172509",
+      "checksum": "9e9304d550364a18860559bbcac3f2b75dcf5df4",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261105,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8252,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.5536,
+        "ordersPerProduct": {
+          "min": 260,
+          "median": 694,
+          "max": 2748
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:03:59.924Z",
+          "to": "2026-10-25T15:44:58.458Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261105, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261101-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261101,
+      "orderCount": 20000,
+      "configSha1": "d1bffa2b754ea6203804148821eb6e684993667c",
+      "checksum": "ac2ea12f86d60fe2c435b4a72ce9552d29e5cf99",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261101,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.78165,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.49535,
+        "ordersPerProduct": {
+          "min": 32,
+          "median": 641,
+          "max": 2096
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:11:44.744Z",
+          "to": "2026-10-25T16:17:52.506Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261101, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261102-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261102,
+      "orderCount": 20000,
+      "configSha1": "249314a05ca1362a154e50512bb508e23aaaead3",
+      "checksum": "f3a0bdff2ba16671b3a6fecf88c71c905f0fdb1a",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261102,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.78295,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.49615,
+        "ordersPerProduct": {
+          "min": 41,
+          "median": 614,
+          "max": 2178
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:04:20.958Z",
+          "to": "2026-10-25T16:34:49.579Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261102, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261103-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261103,
+      "orderCount": 20000,
+      "configSha1": "f2cd2be9d237d52f56f3f4920d5e008f4e4de394",
+      "checksum": "77216bf5d1a45a1f03520553f78abdb3d31e37e0",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261103,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.7713,
+        "maxItemsPerOrder": 5,
+        "multiItemOrderShare": 0.49525,
+        "ordersPerProduct": {
+          "min": 21,
+          "median": 639,
+          "max": 2120
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:00:13.640Z",
+          "to": "2026-10-25T16:45:02.324Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261103, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261104-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261104,
+      "orderCount": 20000,
+      "configSha1": "ac4264d96dc57046fcb29215bdcbe2038065fa6a",
+      "checksum": "2d8eab061401c0772d6761aa132968b98f5c89c7",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261104,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.78275,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.4947,
+        "ordersPerProduct": {
+          "min": 34,
+          "median": 631,
+          "max": 2147
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:13:35.296Z",
+          "to": "2026-10-25T16:45:18.680Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261104, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261105-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261105,
+      "orderCount": 20000,
+      "configSha1": "185fcd99e3b1639445683bedb008fe55b23ad4c4",
+      "checksum": "7cbbe3fca4ce39cce3d01696788d0589442cca16",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261105,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.77695,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.4909,
+        "ordersPerProduct": {
+          "min": 30,
+          "median": 626,
+          "max": 2141
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:03:59.924Z",
+          "to": "2026-10-25T16:46:09.598Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261105, count: 20000 })"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Ốp lưng Redmi Note 13 Pro series">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#831843"/><stop offset="1" stop-color="#f472b6"/></linearGradient></defs>
+  <rect width="600" height="600" rx="36" fill="url(#g)"/>
+  <rect x="220" y="115" width="160" height="280" rx="30" fill="none" stroke="#fff" stroke-width="10"/>
+  <rect x="242" y="137" width="62" height="70" rx="16" fill="none" stroke="#fff" stroke-width="8"/>
+  <circle cx="262" cy="160" r="9" fill="#fff"/><circle cx="284" cy="185" r="9" fill="#fff"/>
+  <g fill="#fff" font-family="Segoe UI, Roboto, Arial, sans-serif">
+  <text x="300" y="452" text-anchor="middle" font-size="32" font-weight="700">Ốp lưng Redmi Note 13</text>
+  <text x="300" y="490" text-anchor="middle" font-size="32" font-weight="700">Pro series</text>
+  <text x="300" y="542" text-anchor="middle" font-size="20" opacity=".75">Ốp lưng &amp; Cường lực · Ảnh minh họa</text>
+  </g>
+</svg>

@@ -1,0 +1,3220 @@
+{
+  "meta": {
+    "generatedAt": "2026-10-26T10:51:59.749Z",
+    "node": "v20.20.2",
+    "command": "node scripts/evaluate-research-datasets.js",
+    "seconds": 127.726,
+    "datasetSeconds": 123.98400000000001
+  },
+  "settings": {
+    "generatorVersion": "trungshop-research-generator/1.0.0",
+    "profiles": {
+      "r1": {
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "r1b": {
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      }
+    },
+    "seeds": [
+      20261101,
+      20261102,
+      20261103,
+      20261104,
+      20261105
+    ],
+    "orders": 20000,
+    "from": "2026-04-01",
+    "to": "2026-10-25",
+    "ratios": {
+      "train": 0.7,
+      "validation": 0.1,
+      "test": 0.2
+    },
+    "grid": {
+      "minSupport": [
+        0.002,
+        0.003,
+        0.005,
+        0.01,
+        0.015,
+        0.02,
+        0.03
+      ],
+      "minConfidence": [
+        0,
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.4
+      ]
+    },
+    "bootstrap": 1000,
+    "rareThreshold": 0.005,
+    "resourceLimits": {
+      "isolate": true,
+      "timeoutSec": 600,
+      "maxMemoryMb": 2048,
+      "miningBudget": {
+        "maxFrequentItems": 5000,
+        "maxCandidatePairs": 5000000,
+        "maxTransactionLength": 24,
+        "maxItemsetUpperBound": 20000000
+      }
+    }
+  },
+  "gr2Check": {
+    "demoChecksum": "d1eb602b9280f67944583f56b7e9f832539a7925",
+    "demoChecksumUnchanged": true,
+    "r1ReproducesDemoGenerator": true
+  },
+  "failures": [],
+  "datasets": [
+    {
+      "name": "R1-seed20261101-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261101,
+      "orderCount": 20000,
+      "configSha1": "406eb2ac3f99e7827dd14a94fe7e0fa30ae32f9e",
+      "checksum": "e84322bb341aeb1d1ba300c07f06479f79de67dc",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261101,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8035,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.54465,
+        "ordersPerProduct": {
+          "min": 289,
+          "median": 684,
+          "max": 2662
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:46:57.976Z",
+          "to": "2026-10-25T16:56:57.127Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261101, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261102-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261102,
+      "orderCount": 20000,
+      "configSha1": "d9a8029569855292485cd136fd40025f9e6ce834",
+      "checksum": "44fe1e131afbb1862217d54b1e75bb6da30f2c82",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261102,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.82455,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.56095,
+        "ordersPerProduct": {
+          "min": 273,
+          "median": 700,
+          "max": 2778
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:15:20.324Z",
+          "to": "2026-10-25T16:50:29.582Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261102, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261103-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261103,
+      "orderCount": 20000,
+      "configSha1": "4e15e37d68e75b303871cf1d4c26df342f4f87ed",
+      "checksum": "a1ba0842b514a0d90c6f8c031f44f854a4bde055",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261103,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8262,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.5513,
+        "ordersPerProduct": {
+          "min": 281,
+          "median": 720,
+          "max": 2708
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:00:13.640Z",
+          "to": "2026-10-25T16:27:40.229Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261103, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261104-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261104,
+      "orderCount": 20000,
+      "configSha1": "5835fb7e7013b402d29ce2d46a41aff7e7dc6c83",
+      "checksum": "0bfe7974f9f9c3b7f8a5fb95fde7d5db85b4f516",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261104,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8096,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.5459,
+        "ordersPerProduct": {
+          "min": 266,
+          "median": 677,
+          "max": 2819
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:19:37.760Z",
+          "to": "2026-10-25T16:15:49.903Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261104, count: 20000 })"
+    },
+    {
+      "name": "R1-seed20261105-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1",
+      "seed": 20261105,
+      "orderCount": 20000,
+      "configSha1": "5577f2d65be57750da436b2fad6aca3520172509",
+      "checksum": "9e9304d550364a18860559bbcac3f2b75dcf5df4",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1",
+        "seed": 20261105,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Giống dữ liệu demo: 55% đơn điện thoại, 35% đơn phụ kiện, 10% đơn nhiễu (1–3 sản phẩm).",
+        "phoneShare": 0.55,
+        "accessoryShare": 0.35,
+        "rareShare": 0,
+        "noiseMaxItems": 3,
+        "noiseFromAllProducts": false,
+        "companionScale": 1,
+        "rareProducts": false
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 41,
+        "rareProductsInCatalog": 0,
+        "avgItemsPerOrder": 1.8252,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.5536,
+        "ordersPerProduct": {
+          "min": 260,
+          "median": 694,
+          "max": 2748
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:03:59.924Z",
+          "to": "2026-10-25T15:44:58.458Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1\", seed: 20261105, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261101-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261101,
+      "orderCount": 20000,
+      "configSha1": "d1bffa2b754ea6203804148821eb6e684993667c",
+      "checksum": "ac2ea12f86d60fe2c435b4a72ce9552d29e5cf99",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261101,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.78165,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.49535,
+        "ordersPerProduct": {
+          "min": 32,
+          "median": 641,
+          "max": 2096
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:11:44.744Z",
+          "to": "2026-10-25T16:17:52.506Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261101, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261102-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261102,
+      "orderCount": 20000,
+      "configSha1": "249314a05ca1362a154e50512bb508e23aaaead3",
+      "checksum": "f3a0bdff2ba16671b3a6fecf88c71c905f0fdb1a",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261102,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.78295,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.49615,
+        "ordersPerProduct": {
+          "min": 41,
+          "median": 614,
+          "max": 2178
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:04:20.958Z",
+          "to": "2026-10-25T16:34:49.579Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261102, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261103-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261103,
+      "orderCount": 20000,
+      "configSha1": "f2cd2be9d237d52f56f3f4920d5e008f4e4de394",
+      "checksum": "77216bf5d1a45a1f03520553f78abdb3d31e37e0",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261103,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.7713,
+        "maxItemsPerOrder": 5,
+        "multiItemOrderShare": 0.49525,
+        "ordersPerProduct": {
+          "min": 21,
+          "median": 639,
+          "max": 2120
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:00:13.640Z",
+          "to": "2026-10-25T16:45:02.324Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261103, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261104-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261104,
+      "orderCount": 20000,
+      "configSha1": "ac4264d96dc57046fcb29215bdcbe2038065fa6a",
+      "checksum": "2d8eab061401c0772d6761aa132968b98f5c89c7",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261104,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.78275,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.4947,
+        "ordersPerProduct": {
+          "min": 34,
+          "median": 631,
+          "max": 2147
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:13:35.296Z",
+          "to": "2026-10-25T16:45:18.680Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261104, count: 20000 })"
+    },
+    {
+      "name": "R1B-seed20261105-n20000",
+      "generatorVersion": "trungshop-research-generator/1.0.0",
+      "profile": "r1b",
+      "seed": 20261105,
+      "orderCount": 20000,
+      "configSha1": "185fcd99e3b1639445683bedb008fe55b23ad4c4",
+      "checksum": "7cbbe3fca4ce39cce3d01696788d0589442cca16",
+      "config": {
+        "generatorVersion": "trungshop-research-generator/1.0.0",
+        "profile": "r1b",
+        "seed": 20261105,
+        "count": 20000,
+        "from": "2026-04-01T00:00:00+07:00",
+        "to": "2026-10-25T23:59:59+07:00",
+        "description": "Khó hơn: 43,8% đơn điện thoại, 30% đơn phụ kiện, 1,2% đơn có sản phẩm ít giao dịch, 25% đơn nhiễu (1–4 sản phẩm trong 41 sản phẩm gốc); xác suất mua kèm × 0,7; thêm 7 sản phẩm hiếm chỉ xuất hiện trong nhánh 1,2%.",
+        "phoneShare": 0.438,
+        "accessoryShare": 0.3,
+        "rareShare": 0.012,
+        "noiseMaxItems": 4,
+        "noiseFromAllProducts": false,
+        "companionScale": 0.7,
+        "rareProducts": true
+      },
+      "stats": {
+        "orders": 20000,
+        "products": 48,
+        "rareProductsInCatalog": 7,
+        "avgItemsPerOrder": 1.77695,
+        "maxItemsPerOrder": 6,
+        "multiItemOrderShare": 0.4909,
+        "ordersPerProduct": {
+          "min": 30,
+          "median": 626,
+          "max": 2141
+        },
+        "timeRange": {
+          "from": "2026-03-31T17:03:59.924Z",
+          "to": "2026-10-25T16:46:09.598Z"
+        }
+      },
+      "regenerate": "generateResearchDataset({ profile: \"r1b\", seed: 20261105, count: 20000 })"
+    }
+  ],
+  "profiles": {
+    "r1": {
+      "seeds": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105
+      ],
+      "datasets": [
+        {
+          "name": "R1-seed20261101-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1",
+          "seed": 20261101,
+          "checksum": "e84322bb341aeb1d1ba300c07f06479f79de67dc",
+          "configSha1": "406eb2ac3f99e7827dd14a94fe7e0fa30ae32f9e",
+          "orders": 20000,
+          "products": 41,
+          "seconds": 12.668,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2793,
+            "testQueries": 5251,
+            "testOrdersWithAtLeast2Items": 2128,
+            "ranges": {
+              "train": {
+                "from": 1774979217976,
+                "to": 1787635608174
+              },
+              "validation": {
+                "from": 1787638264107,
+                "to": 1789394784891
+              },
+              "test": {
+                "from": 1789394844521,
+                "to": 1792947417127
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 0,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1-seed20261102-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1",
+          "seed": 20261102,
+          "checksum": "44fe1e131afbb1862217d54b1e75bb6da30f2c82",
+          "configSha1": "d9a8029569855292485cd136fd40025f9e6ce834",
+          "orders": 20000,
+          "products": 41,
+          "seconds": 11.313,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2780,
+            "testQueries": 5506,
+            "testOrdersWithAtLeast2Items": 2236,
+            "ranges": {
+              "train": {
+                "from": 1774977320324,
+                "to": 1787560615865
+              },
+              "validation": {
+                "from": 1787561428199,
+                "to": 1789313268192
+              },
+              "test": {
+                "from": 1789313442520,
+                "to": 1792947029582
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0.05
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 0,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1-seed20261103-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1",
+          "seed": 20261103,
+          "checksum": "a1ba0842b514a0d90c6f8c031f44f854a4bde055",
+          "configSha1": "4e15e37d68e75b303871cf1d4c26df342f4f87ed",
+          "orders": 20000,
+          "products": 41,
+          "seconds": 11.69,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2619,
+            "testQueries": 5648,
+            "testOrdersWithAtLeast2Items": 2245,
+            "ranges": {
+              "train": {
+                "from": 1774976413640,
+                "to": 1787533069857
+              },
+              "validation": {
+                "from": 1787533401601,
+                "to": 1789354765132
+              },
+              "test": {
+                "from": 1789354884751,
+                "to": 1792945660229
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 0,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1-seed20261104-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1",
+          "seed": 20261104,
+          "checksum": "0bfe7974f9f9c3b7f8a5fb95fde7d5db85b4f516",
+          "configSha1": "5835fb7e7013b402d29ce2d46a41aff7e7dc6c83",
+          "orders": 20000,
+          "products": 41,
+          "seconds": 12.43,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2665,
+            "testQueries": 5560,
+            "testOrdersWithAtLeast2Items": 2229,
+            "ranges": {
+              "train": {
+                "from": 1774977577760,
+                "to": 1787576814834
+              },
+              "validation": {
+                "from": 1787577641565,
+                "to": 1789358279949
+              },
+              "test": {
+                "from": 1789358590662,
+                "to": 1792944949903
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 0,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1-seed20261105-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1",
+          "seed": 20261105,
+          "checksum": "9e9304d550364a18860559bbcac3f2b75dcf5df4",
+          "configSha1": "5577f2d65be57750da436b2fad6aca3520172509",
+          "orders": 20000,
+          "products": 41,
+          "seconds": 12.298,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2645,
+            "testQueries": 5528,
+            "testOrdersWithAtLeast2Items": 2208,
+            "ranges": {
+              "train": {
+                "from": 1774976639924,
+                "to": 1787458106131
+              },
+              "validation": {
+                "from": 1787458209218,
+                "to": 1789305184543
+              },
+              "test": {
+                "from": 1789305722771,
+                "to": 1792943098458
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 0,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        }
+      ],
+      "methods": [
+        {
+          "key": "random",
+          "label": "Random (seed 42)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.030918688038514452,
+              "sd": 0.0014638402283775676,
+              "ciLow": 0.029101381715600345,
+              "ciHigh": 0.03273599436142856,
+              "min": 0.02905920813657819,
+              "max": 0.03314037626628047
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.08811570891302263,
+              "sd": 0.005234043645959469,
+              "ciLow": 0.08161782722633547,
+              "ciHigh": 0.0946135905997098,
+              "min": 0.08204969310670433,
+              "max": 0.09575795947901578
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.14808405387933216,
+              "sd": 0.006809505329542935,
+              "ciLow": 0.1396302917464173,
+              "ciHigh": 0.156537816012247,
+              "min": 0.14039229930984382,
+              "max": 0.15882778581765558
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 1,
+              "sd": 0,
+              "ciLow": 1,
+              "ciHigh": 1,
+              "min": 1,
+              "max": 1
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.029128161805228064,
+              "high": 0.03267250960772702,
+              "halfWidth": 0.001772173901249479
+            },
+            "recall": {
+              "low": 0.0824572476669498,
+              "high": 0.09373413568603198,
+              "halfWidth": 0.005638444009541095
+            },
+            "hitRate": {
+              "low": 0.139849134959914,
+              "high": 0.15616533129141774,
+              "halfWidth": 0.008158098165751882
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.001772173901249479,
+            "recall": 0.005638444009541095,
+            "hitRate": 0.008158098165751882
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "key": "most-popular",
+          "label": "Most Popular",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.10647206457348801,
+              "sd": 0.007362340641930041,
+              "ciLow": 0.09733197678203816,
+              "ciHigh": 0.11561215236493787,
+              "min": 0.09521995810321554,
+              "max": 0.11383944787504556
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.32259366363300035,
+              "sd": 0.018237982497706626,
+              "ciLow": 0.2999518477655584,
+              "ciHigh": 0.3452354795004423,
+              "min": 0.29899066844410543,
+              "max": 0.3391913892908837
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.4236958685853714,
+              "sd": 0.025512141938463517,
+              "ciLow": 0.39202343879620083,
+              "ciHigh": 0.45536829837454196,
+              "min": 0.3913540278042278,
+              "max": 0.4543165467625899
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.14634146341463414,
+              "sd": 0,
+              "ciLow": 0.14634146341463414,
+              "ciHigh": 0.14634146341463414,
+              "min": 0.14634146341463414,
+              "max": 0.14634146341463414
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.09990451428830352,
+              "high": 0.11308701920940067,
+              "halfWidth": 0.006591252460548591
+            },
+            "recall": {
+              "low": 0.3081065675473812,
+              "high": 0.33744259372307583,
+              "halfWidth": 0.014668013087847303
+            },
+            "hitRate": {
+              "low": 0.4048674875789612,
+              "high": 0.4429338349947439,
+              "halfWidth": 0.019033173707891378
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.006591252460548591,
+            "recall": 0.014668013087847303,
+            "hitRate": 0.019033173707891378
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "key": "category-based",
+          "label": "Category-Based (cùng danh mục → bán chạy)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.07360798515364009,
+              "sd": 0.006050526662447371,
+              "ciLow": 0.06609646842697318,
+              "ciHigh": 0.08111950188030699,
+              "min": 0.06684441058845725,
+              "max": 0.07908827785817375
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.23168052092996344,
+              "sd": 0.024792919921603138,
+              "ciLow": 0.20090098005959794,
+              "ciHigh": 0.26246006180032894,
+              "min": 0.20748577309601673,
+              "max": 0.25881572600096386
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.3544851410385008,
+              "sd": 0.029406325056466745,
+              "ciLow": 0.31797821943407506,
+              "ciHigh": 0.3909920626429266,
+              "min": 0.32164911006175084,
+              "max": 0.3814748201438849
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.9512195121951219,
+              "sd": 0,
+              "ciLow": 0.9512195121951219,
+              "ciHigh": 0.9512195121951219,
+              "min": 0.9512195121951219,
+              "max": 0.9512195121951219
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.07022300817171698,
+              "high": 0.0771760326789909,
+              "halfWidth": 0.003476512253636968
+            },
+            "recall": {
+              "low": 0.21975512254019006,
+              "high": 0.24413474989939493,
+              "halfWidth": 0.012189813679602424
+            },
+            "hitRate": {
+              "low": 0.33883806013342804,
+              "high": 0.37010860580942573,
+              "halfWidth": 0.01563527283799885
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.003476512253636968,
+            "recall": 0.012189813679602424,
+            "hitRate": 0.01563527283799885
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "key": "co-occurrence",
+          "label": "Co-occurrence (logic cũ, sup ≥ 1%, conf ≥ 1%)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.24109902177033402,
+              "sd": 0.00535635603880043,
+              "ciLow": 0.23444929353607177,
+              "ciHigh": 0.24774875000459626,
+              "min": 0.2351171205484743,
+              "max": 0.24907932011332445
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.666288545477,
+              "sd": 0.013652507385359672,
+              "ciLow": 0.6493394361998596,
+              "ciHigh": 0.6832376547541404,
+              "min": 0.6530395683453228,
+              "max": 0.6857973120232467
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.6974269210082242,
+              "sd": 0.010624524260012877,
+              "ciLow": 0.6842369466234681,
+              "ciHigh": 0.7106168953929803,
+              "min": 0.6879496402877698,
+              "max": 0.7119505993461678
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.5024390243902439,
+              "sd": 0.013359086768418698,
+              "ciLow": 0.4858541865220339,
+              "ciHigh": 0.5190238622584539,
+              "min": 0.4878048780487805,
+              "max": 0.5121951219512195
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 2.9254410123352366,
+              "sd": 0.052343608860478286,
+              "ciLow": 2.860458257043889,
+              "ciHigh": 2.9904237676265844,
+              "min": 2.877532561505065,
+              "max": 3.012713403559753
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.23096347058536582,
+              "high": 0.2510468138120406,
+              "halfWidth": 0.010041671613337378
+            },
+            "recall": {
+              "low": 0.648049576064443,
+              "high": 0.683645702982301,
+              "halfWidth": 0.017798063458929016
+            },
+            "hitRate": {
+              "low": 0.6790465908104126,
+              "high": 0.714952776624398,
+              "halfWidth": 0.017953092906992672
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.010041671613337378,
+            "recall": 0.017798063458929016,
+            "hitRate": 0.017953092906992672
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "key": "current-rules-only",
+          "label": "Hệ thống hiện tại – chỉ luật (tham số website: sup 0.01, conf 0.2)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.21499025613896325,
+              "sd": 0.005588871264047046,
+              "ciLow": 0.20805186840428355,
+              "ciHigh": 0.22192864387364294,
+              "min": 0.2092172919443972,
+              "max": 0.2214589235127568
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.6157953386146054,
+              "sd": 0.010129055939449088,
+              "ciLow": 0.6032204707792588,
+              "ciHigh": 0.6283702064499521,
+              "min": 0.6022062350119891,
+              "max": 0.6260291802881695
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.6745270307636961,
+              "sd": 0.010805373846525853,
+              "ciLow": 0.6611125379576702,
+              "ciHigh": 0.687941523569722,
+              "min": 0.662410071942446,
+              "max": 0.6855524079320113
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.4878048780487805,
+              "sd": 0,
+              "ciLow": 0.4878048780487805,
+              "ciHigh": 0.4878048780487805,
+              "min": 0.4878048780487805,
+              "max": 0.4878048780487805
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.8370737539540064,
+              "sd": 0.006373089475037211,
+              "ciLow": 0.829161786804204,
+              "ciHigh": 0.8449857211038088,
+              "min": 0.8304992764109985,
+              "max": 0.8463494369778424
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 2.158904361285514,
+              "sd": 0.060408568970746396,
+              "ciLow": 2.083909240765835,
+              "ciHigh": 2.233899481805193,
+              "min": 2.109122071986288,
+              "max": 2.2599493487698985
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.20682648236293139,
+              "high": 0.2230454095285937,
+              "halfWidth": 0.00810946358283116
+            },
+            "recall": {
+              "low": 0.5987943891548217,
+              "high": 0.6324358107691864,
+              "halfWidth": 0.01682071080718236
+            },
+            "hitRate": {
+              "low": 0.6564474655953958,
+              "high": 0.6919365798860486,
+              "halfWidth": 0.017744557145326446
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.00810946358283116,
+            "recall": 0.01682071080718236,
+            "hitRate": 0.017744557145326446
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "key": "current-with-fallback",
+          "label": "Hệ thống hiện tại – luật + fallback (tham số website)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.22595916356300233,
+              "sd": 0.0043753841618186465,
+              "ciLow": 0.22052727752222578,
+              "ciHigh": 0.23139104960377888,
+              "min": 0.22045324700057797,
+              "max": 0.23118668596238287
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.6428553334505136,
+              "sd": 0.007798633256768287,
+              "ciLow": 0.6331736036736778,
+              "ciHigh": 0.6525370632273494,
+              "min": 0.6341696642685826,
+              "max": 0.6529997578399301
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.7033972434464484,
+              "sd": 0.008823931203301317,
+              "ciLow": 0.6924426422148019,
+              "ciHigh": 0.7143518446780949,
+              "min": 0.6941534945724623,
+              "max": 0.7142351274787535
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.975609756097561,
+              "sd": 0,
+              "ciLow": 0.975609756097561,
+              "ciHigh": 0.975609756097561,
+              "min": 0.975609756097561,
+              "max": 0.975609756097561
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.8370737539540064,
+              "sd": 0.006373089475037211,
+              "ciLow": 0.829161786804204,
+              "ciHigh": 0.8449857211038088,
+              "min": 0.8304992764109985,
+              "max": 0.8463494369778424
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.21755166413224486,
+              "high": 0.23420404779580672,
+              "halfWidth": 0.008326191831780957
+            },
+            "recall": {
+              "low": 0.6264384409841759,
+              "high": 0.6588254085405403,
+              "halfWidth": 0.016193483778182183
+            },
+            "hitRate": {
+              "low": 0.6862672228373922,
+              "high": 0.7198374058934917,
+              "halfWidth": 0.01678509152804981
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.008326191831780957,
+            "recall": 0.016193483778182183,
+            "hitRate": 0.01678509152804981
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "key": "tuned-rules-only",
+          "label": "Luật – chỉ luật (tham số chọn trên validation)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.28289150876578006,
+              "sd": 0.004187879953829748,
+              "ciLow": 0.2776924026255319,
+              "ciHigh": 0.2880906149060282,
+              "min": 0.278423157493822,
+              "max": 0.2894830028328744
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.8109020974574221,
+              "sd": 0.003861547798458816,
+              "ciLow": 0.8061081212472232,
+              "ciHigh": 0.8156960736676211,
+              "min": 0.8073564881813796,
+              "max": 0.8171994188158371
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.8312165410565813,
+              "sd": 0.003074676350586172,
+              "ciLow": 0.8273994381620751,
+              "ciHigh": 0.8350336439510875,
+              "min": 0.8272709960007617,
+              "max": 0.8352517985611511
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.7317073170731707,
+              "sd": 0.017246506858208492,
+              "ciLow": 0.7102963834521282,
+              "ciHigh": 0.7531182506942132,
+              "min": 0.7073170731707317,
+              "max": 0.7560975609756098
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.9883344418788005,
+              "sd": 0.0013527663563363465,
+              "ciLow": 0.9866550298738986,
+              "ciHigh": 0.9900138538837023,
+              "min": 0.9860978861169301,
+              "max": 0.9897482014388489
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 3.9497566908879933,
+              "sd": 0.04199048969848448,
+              "ciLow": 3.897626970067373,
+              "ciHigh": 4.001886411708614,
+              "min": 3.904305354558611,
+              "max": 4.00599346167817
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.2729050048454042,
+              "high": 0.2925414109743417,
+              "halfWidth": 0.009818203064468733
+            },
+            "recall": {
+              "low": 0.7968503188078316,
+              "high": 0.8246627705635236,
+              "halfWidth": 0.013906225877845946
+            },
+            "hitRate": {
+              "low": 0.8173258598305363,
+              "high": 0.844769213530973,
+              "halfWidth": 0.013721676850218323
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.009818203064468733,
+            "recall": 0.013906225877845946,
+            "hitRate": 0.013721676850218323
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        },
+        {
+          "key": "tuned-with-fallback",
+          "label": "Luật + fallback (tham số chọn trên validation)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.2850683318763269,
+              "sd": 0.004126705368873269,
+              "ciLow": 0.2799451718385891,
+              "ciHigh": 0.29019149191406474,
+              "min": 0.280784612454782,
+              "max": 0.29146600566573594
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.817587071404003,
+              "sd": 0.0032637478303545174,
+              "ciLow": 0.813535242896001,
+              "ciHigh": 0.821638899912005,
+              "min": 0.8136878919440425,
+              "max": 0.8224664002905919
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.8414467589791617,
+              "sd": 0.00380227263917914,
+              "ciLow": 0.836726370801087,
+              "ciHigh": 0.8461671471572363,
+              "min": 0.8385069510569415,
+              "max": 0.847841726618705
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.8975609756097562,
+              "sd": 0.01090764867073069,
+              "ciLow": 0.8840195121951221,
+              "ciHigh": 0.9111024390243904,
+              "min": 0.8780487804878049,
+              "max": 0.9024390243902439
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.9883344418788005,
+              "sd": 0.0013527663563363465,
+              "ciLow": 0.9866550298738986,
+              "ciHigh": 0.9900138538837023,
+              "min": 0.9860978861169301,
+              "max": 0.9897482014388489
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.2753688811498699,
+              "high": 0.2946292184740583,
+              "halfWidth": 0.009630168662094213
+            },
+            "recall": {
+              "low": 0.8041299599204708,
+              "high": 0.8308977694123477,
+              "halfWidth": 0.013383904745938447
+            },
+            "hitRate": {
+              "low": 0.8282670095363931,
+              "high": 0.8542257556077308,
+              "halfWidth": 0.012979373035668863
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.009630168662094213,
+            "recall": 0.013383904745938447,
+            "hitRate": 0.012979373035668863
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "recall": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "hitRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            },
+            "ruleQueryRate": {
+              "n": 0,
+              "mean": null,
+              "sd": null,
+              "ciLow": null,
+              "ciHigh": null,
+              "min": null,
+              "max": null
+            }
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "a": "tuned-with-fallback",
+          "b": "current-with-fallback",
+          "recall": {
+            "n": 5,
+            "mean": 0.1747317379534894,
+            "sd": 0.007138639938580206,
+            "ciLow": 0.16586936674254954,
+            "ciHigh": 0.18359410916442925,
+            "min": 0.16833695127834225,
+            "max": 0.1844034772182278
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.1380495155327133,
+            "sd": 0.009830685065699403,
+            "ciLow": 0.12584506467657464,
+            "ciHigh": 0.15025396638885197,
+            "min": 0.12765580736543913,
+            "max": 0.15035971223021583
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.05910916831332462,
+            "sd": 0.003060760228981338,
+            "ciLow": 0.05530934179590695,
+            "ciHigh": 0.06290899483074229,
+            "min": 0.05466714905933864,
+            "max": 0.0619334277620428
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "co-occurrence",
+          "recall": {
+            "n": 5,
+            "mean": 0.15129852592700305,
+            "sd": 0.011876030907071428,
+            "ciLow": 0.13655484991636022,
+            "ciHigh": 0.16604220193764588,
+            "min": 0.13666908826734525,
+            "max": 0.16553357314148753
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.14401983797093726,
+            "sd": 0.012194735419097727,
+            "ciLow": 0.1288805014820409,
+            "ciHigh": 0.15915917445983363,
+            "min": 0.12804213585179802,
+            "max": 0.1598920863309352
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.043969310105992934,
+            "sd": 0.0031927343956277728,
+            "ciLow": 0.04000564228755179,
+            "ciHigh": 0.04793297792443408,
+            "min": 0.039229930984384154,
+            "max": 0.04733812949640798
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "most-popular",
+          "recall": {
+            "n": 5,
+            "mean": 0.49499340777100287,
+            "sd": 0.017914835314112816,
+            "ciLow": 0.4727527678028104,
+            "ciHigh": 0.5172340477391953,
+            "min": 0.47449650265315874,
+            "max": 0.5170253285088562
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.4177508903937902,
+            "sd": 0.023334818870600266,
+            "ciLow": 0.3887815308588373,
+            "ciHigh": 0.4467202499287431,
+            "min": 0.3935251798561151,
+            "max": 0.4471529232527137
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.17859626730283892,
+            "sd": 0.007755276554873265,
+            "ciLow": 0.16896836335136783,
+            "ciHigh": 0.18822417125431,
+            "min": 0.1683617871413146,
+            "max": 0.18647308781871116
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "category-based",
+          "recall": {
+            "n": 5,
+            "mean": 0.5859065504740396,
+            "sd": 0.026576500838381395,
+            "ciLow": 0.5529127564258649,
+            "ciHigh": 0.6189003445222143,
+            "min": 0.5548721659430786,
+            "max": 0.6149806271945752
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.48696161794066073,
+            "sd": 0.02745353177372619,
+            "ciLow": 0.45287902073398834,
+            "ciHigh": 0.5210442151473331,
+            "min": 0.4591172214182344,
+            "max": 0.518343625136215
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.21146034672268685,
+            "sd": 0.004392033756407438,
+            "ciLow": 0.20600779079394466,
+            "ciHigh": 0.21691290265142904,
+            "min": 0.20658273381296605,
+            "max": 0.21512039660058285
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "tuned-rules-only",
+          "recall": {
+            "n": 5,
+            "mean": 0.006684973946580919,
+            "sd": 0.0013690552503883555,
+            "ciLow": 0.004985339850784101,
+            "ciHigh": 0.008384608042377737,
+            "min": 0.005266981474754795,
+            "max": 0.00854316546762579
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.010230217922580276,
+            "sd": 0.0017133190769255259,
+            "ciLow": 0.008103192355645914,
+            "ciHigh": 0.012357243489514638,
+            "min": 0.008172902288412609,
+            "max": 0.01258992805755399
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.0021768231105468326,
+            "sd": 0.0003759716011984935,
+            "ciLow": 0.0017100675488067084,
+            "ciHigh": 0.0026435786722869567,
+            "min": 0.0017072284780241809,
+            "max": 0.0026978417266191324
+          }
+        }
+      ]
+    },
+    "r1b": {
+      "seeds": [
+        20261101,
+        20261102,
+        20261103,
+        20261104,
+        20261105
+      ],
+      "datasets": [
+        {
+          "name": "R1B-seed20261101-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1b",
+          "seed": 20261101,
+          "checksum": "ac2ea12f86d60fe2c435b4a72ce9552d29e5cf99",
+          "configSha1": "d1bffa2b754ea6203804148821eb6e684993667c",
+          "orders": 20000,
+          "products": 48,
+          "seconds": 12.912,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2534,
+            "testQueries": 5091,
+            "testOrdersWithAtLeast2Items": 1992,
+            "ranges": {
+              "train": {
+                "from": 1774977104744,
+                "to": 1787601902802
+              },
+              "validation": {
+                "from": 1787602093737,
+                "to": 1789421181206
+              },
+              "test": {
+                "from": 1789422112096,
+                "to": 1792945072506
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 7,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1B-seed20261102-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1b",
+          "seed": 20261102,
+          "checksum": "f3a0bdff2ba16671b3a6fecf88c71c905f0fdb1a",
+          "configSha1": "249314a05ca1362a154e50512bb508e23aaaead3",
+          "orders": 20000,
+          "products": 48,
+          "seconds": 12.75,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2520,
+            "testQueries": 5058,
+            "testOrdersWithAtLeast2Items": 1956,
+            "ranges": {
+              "train": {
+                "from": 1774976660958,
+                "to": 1787510828382
+              },
+              "validation": {
+                "from": 1787512113401,
+                "to": 1789296546778
+              },
+              "test": {
+                "from": 1789298583954,
+                "to": 1792946089579
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 7,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1B-seed20261103-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1b",
+          "seed": 20261103,
+          "checksum": "77216bf5d1a45a1f03520553f78abdb3d31e37e0",
+          "configSha1": "f2cd2be9d237d52f56f3f4920d5e008f4e4de394",
+          "orders": 20000,
+          "products": 48,
+          "seconds": 12.73,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2457,
+            "testQueries": 5033,
+            "testOrdersWithAtLeast2Items": 1950,
+            "ranges": {
+              "train": {
+                "from": 1774976413640,
+                "to": 1787536542953
+              },
+              "validation": {
+                "from": 1787537313306,
+                "to": 1789359616062
+              },
+              "test": {
+                "from": 1789361010688,
+                "to": 1792946702324
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 7,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1B-seed20261104-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1b",
+          "seed": 20261104,
+          "checksum": "2d8eab061401c0772d6761aa132968b98f5c89c7",
+          "configSha1": "ac4264d96dc57046fcb29215bdcbe2038065fa6a",
+          "orders": 20000,
+          "products": 48,
+          "seconds": 12.436,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2568,
+            "testQueries": 5150,
+            "testOrdersWithAtLeast2Items": 2000,
+            "ranges": {
+              "train": {
+                "from": 1774977215296,
+                "to": 1787474848207
+              },
+              "validation": {
+                "from": 1787477357549,
+                "to": 1789275906793
+              },
+              "test": {
+                "from": 1789277608982,
+                "to": 1792946718680
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 7,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        },
+        {
+          "name": "R1B-seed20261105-n20000",
+          "generatorVersion": "trungshop-research-generator/1.0.0",
+          "profile": "r1b",
+          "seed": 20261105,
+          "checksum": "7cbbe3fca4ce39cce3d01696788d0589442cca16",
+          "configSha1": "185fcd99e3b1639445683bedb008fe55b23ad4c4",
+          "orders": 20000,
+          "products": 48,
+          "seconds": 12.757,
+          "split": {
+            "train": 14000,
+            "validation": 2000,
+            "test": 4000,
+            "validationQueries": 2478,
+            "testQueries": 5093,
+            "testOrdersWithAtLeast2Items": 1961,
+            "ranges": {
+              "train": {
+                "from": 1774976639924,
+                "to": 1787616066286
+              },
+              "validation": {
+                "from": 1787616282385,
+                "to": 1789396229544
+              },
+              "test": {
+                "from": 1789398735028,
+                "to": 1792946769598
+              }
+            }
+          },
+          "selected": {
+            "minSupport": 0.002,
+            "minConfidence": 0
+          },
+          "selectedOnGridEdge": [
+            "minSupport ở giá trị nhỏ nhất của lưới",
+            "minConfidence ở giá trị nhỏ nhất của lưới"
+          ],
+          "rareProducts": 7,
+          "rareLimit": 80,
+          "algorithmsIdentical": true
+        }
+      ],
+      "methods": [
+        {
+          "key": "random",
+          "label": "Random (seed 42)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.03413111669694817,
+              "sd": 0.0008295734312403842,
+              "ciLow": 0.03310123036598866,
+              "ciHigh": 0.03516100302790768,
+              "min": 0.033300218557520196,
+              "max": 0.03546043589240104
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.09358932826500901,
+              "sd": 0.0038597735884827664,
+              "ciLow": 0.0887975546742935,
+              "ciHigh": 0.09838110185572453,
+              "min": 0.08924432081594764,
+              "max": 0.0997807448131417
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.16451827057697227,
+              "sd": 0.0038064401751906167,
+              "ciLow": 0.15979270854904856,
+              "ciHigh": 0.16924383260489598,
+              "min": 0.16054043314126765,
+              "max": 0.17062634989200864
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 1,
+              "sd": 0,
+              "ciLow": 1,
+              "ciHigh": 1,
+              "min": 1,
+              "max": 1
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.031961853243635784,
+              "high": 0.03641101073045005,
+              "halfWidth": 0.0022245787434071367
+            },
+            "recall": {
+              "low": 0.0871791948779386,
+              "high": 0.09992725051540538,
+              "halfWidth": 0.006374027818733393
+            },
+            "hitRate": {
+              "low": 0.15423923104882145,
+              "high": 0.17518334850782544,
+              "halfWidth": 0.010472058729501996
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.0022245787434071367,
+            "recall": 0.006374027818733393,
+            "hitRate": 0.010472058729501996
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.029491746525875828,
+              "sd": 0.005921048164800852,
+              "ciLow": 0.0221409728146644,
+              "ciHigh": 0.036842520237087256,
+              "min": 0.02,
+              "max": 0.035211267605633804
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.058983493051751656,
+              "sd": 0.011842096329601703,
+              "ciLow": 0.0442819456293288,
+              "ciHigh": 0.07368504047417451,
+              "min": 0.04,
+              "max": 0.07042253521126761
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "key": "most-popular",
+          "label": "Most Popular",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.07864839770942474,
+              "sd": 0.0010489662959761313,
+              "ciLow": 0.07734614282856657,
+              "ciHigh": 0.0799506525902829,
+              "min": 0.0768021999607128,
+              "max": 0.07939897192566
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.2377338922282976,
+              "sd": 0.0031498789507580813,
+              "ciLow": 0.23382342794219776,
+              "ciHigh": 0.24164435651439745,
+              "min": 0.23483343267766105,
+              "max": 0.24303292100268337
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.3414279577027428,
+              "sd": 0.005573680943803092,
+              "ciLow": 0.3345084282180902,
+              "ciHigh": 0.34834748718739544,
+              "min": 0.33294048320565706,
+              "max": 0.34812487728254465
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.125,
+              "sd": 0,
+              "ciLow": 0.125,
+              "ciHigh": 0.125,
+              "min": 0.125,
+              "max": 0.125
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.0736530864824965,
+              "high": 0.08401736315424949,
+              "halfWidth": 0.005182138335876496
+            },
+            "recall": {
+              "low": 0.22608335271376498,
+              "high": 0.24956540039386238,
+              "halfWidth": 0.011741023840048678
+            },
+            "hitRate": {
+              "low": 0.32395989759504207,
+              "high": 0.35945474089653195,
+              "halfWidth": 0.017747421650744933
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.005182138335876496,
+            "recall": 0.011741023840048678,
+            "hitRate": 0.017747421650744933
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.09305799938896632,
+              "sd": 0.025215009440621005,
+              "ciLow": 0.06175444917873105,
+              "ciHigh": 0.12436154959920159,
+              "min": 0.06666666666666667,
+              "max": 0.1320754716981132
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.152041492440718,
+              "sd": 0.026708109335077463,
+              "ciLow": 0.11888431105794314,
+              "ciHigh": 0.18519867382349284,
+              "min": 0.12,
+              "max": 0.18867924528301888
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "key": "category-based",
+          "label": "Category-Based (cùng danh mục → bán chạy)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.05604504020472105,
+              "sd": 0.0036449908182571663,
+              "ciLow": 0.051519911893194645,
+              "ciHigh": 0.060570168516247455,
+              "min": 0.05211546065638478,
+              "max": 0.06196740624386247
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.16755198632734972,
+              "sd": 0.012278513959993999,
+              "ciLow": 0.15230864171711345,
+              "ciHigh": 0.182795330937586,
+              "min": 0.15414854356135554,
+              "max": 0.18740100791936776
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.2657927413604791,
+              "sd": 0.014107834682650089,
+              "ciLow": 0.24827835920702315,
+              "ciHigh": 0.28330712351393506,
+              "min": 0.24930802688809806,
+              "max": 0.287846063224033
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.875,
+              "sd": 0,
+              "ciLow": 0.875,
+              "ciHigh": 0.875,
+              "min": 0.875,
+              "max": 0.875
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.05262412209267886,
+              "high": 0.059554383262884904,
+              "halfWidth": 0.0034651305851030184
+            },
+            "recall": {
+              "low": 0.15651310460888837,
+              "high": 0.17912811382573263,
+              "halfWidth": 0.011307504608422132
+            },
+            "hitRate": {
+              "low": 0.250533695376075,
+              "high": 0.28135758765040453,
+              "halfWidth": 0.015411946137164751
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.0034651305851030184,
+            "recall": 0.011307504608422132,
+            "hitRate": 0.015411946137164751
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "key": "co-occurrence",
+          "label": "Co-occurrence (logic cũ, sup ≥ 1%, conf ≥ 1%)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.10542163823823147,
+              "sd": 0.0028804894414769357,
+              "ciLow": 0.10184561158340644,
+              "ciHigh": 0.10899766489305651,
+              "min": 0.1020956899960427,
+              "max": 0.10866019417475545
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.35490644521451764,
+              "sd": 0.007684362812020539,
+              "ciLow": 0.34536657818864097,
+              "ciHigh": 0.3644463122403943,
+              "min": 0.3456851447115703,
+              "max": 0.36199358596766823
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.41527250336477833,
+              "sd": 0.007302385778624243,
+              "ciLow": 0.40620684743417157,
+              "ciHigh": 0.4243381592953851,
+              "min": 0.4059209219153586,
+              "max": 0.4260750049086982
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.3958333333333333,
+              "sd": 0,
+              "ciLow": 0.3958333333333333,
+              "ciHigh": 0.3958333333333333,
+              "min": 0.3958333333333333,
+              "max": 0.3958333333333333
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 1.396087275487312,
+              "sd": 0.05259968283079935,
+              "ciLow": 1.3307866133394803,
+              "ciHigh": 1.4613879376351435,
+              "min": 1.357848952155002,
+              "max": 1.4842718446601941
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.09908745756215336,
+              "high": 0.11196268841790716,
+              "halfWidth": 0.006437615427876899
+            },
+            "recall": {
+              "low": 0.33656521290942965,
+              "high": 0.3740468722873368,
+              "halfWidth": 0.018740829688953565
+            },
+            "hitRate": {
+              "low": 0.3941606283407821,
+              "high": 0.43656576256850715,
+              "halfWidth": 0.02120256711386249
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.006437615427876899,
+            "recall": 0.018740829688953565,
+            "hitRate": 0.02120256711386249
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "key": "current-rules-only",
+          "label": "Hệ thống hiện tại – chỉ luật (tham số website: sup 0.01, conf 0.2)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.09336178695422477,
+              "sd": 0.00254370017261035,
+              "ciLow": 0.09020387236923895,
+              "ciHigh": 0.09651970153921059,
+              "min": 0.08987742190588892,
+              "max": 0.09561972107640633
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.31446674628256277,
+              "sd": 0.007988632705068763,
+              "ciLow": 0.30454913885183205,
+              "ciHigh": 0.3243843537132935,
+              "min": 0.30531501252141796,
+              "max": 0.3260492372160019
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.37396939764473464,
+              "sd": 0.007241377271762218,
+              "ciLow": 0.3649794816365064,
+              "ciHigh": 0.3829593136529629,
+              "min": 0.3651640964808225,
+              "max": 0.38283244942054606
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.39166666666666666,
+              "sd": 0.009316949906249115,
+              "ciLow": 0.3801,
+              "ciHigh": 0.40323333333333333,
+              "min": 0.375,
+              "max": 0.3958333333333333
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.6377327100931007,
+              "sd": 0.007639703549241455,
+              "ciLow": 0.62824828597626,
+              "ciHigh": 0.6472171342099414,
+              "min": 0.6244784422809457,
+              "max": 0.6428431180051051
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 1.1344798594532661,
+              "sd": 0.030550743416847395,
+              "ciLow": 1.0965521825764677,
+              "ciHigh": 1.1724075363300646,
+              "min": 1.0852115460656386,
+              "max": 1.1651286078931866
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.08758423374083929,
+              "high": 0.0993590990900047,
+              "halfWidth": 0.005887432674582703
+            },
+            "recall": {
+              "low": 0.2971994066719015,
+              "high": 0.3322921114833469,
+              "halfWidth": 0.017546352405722727
+            },
+            "hitRate": {
+              "low": 0.35410108838857673,
+              "high": 0.3945571180367436,
+              "halfWidth": 0.020228014824083408
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.005887432674582703,
+            "recall": 0.017546352405722727,
+            "hitRate": 0.020228014824083408
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "key": "current-with-fallback",
+          "label": "Hệ thống hiện tại – luật + fallback (tham số website)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.11711625882642134,
+              "sd": 0.0032309595698037374,
+              "ciLow": 0.11310513579437298,
+              "ciHigh": 0.12112738185846969,
+              "min": 0.11241597469355293,
+              "max": 0.12036128018849329
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.3684471992069772,
+              "sd": 0.009341529874933398,
+              "ciLow": 0.35685001737093547,
+              "ciHigh": 0.38004438104301896,
+              "min": 0.35557862132595075,
+              "max": 0.38063903620768585
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.4736390860403546,
+              "sd": 0.006558830334146344,
+              "ciLow": 0.46549652812583703,
+              "ciHigh": 0.48178164395487216,
+              "min": 0.4652036378015026,
+              "max": 0.48144512075397605
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.8958333333333334,
+              "sd": 0,
+              "ciLow": 0.8958333333333334,
+              "ciHigh": 0.8958333333333334,
+              "min": 0.8958333333333334,
+              "max": 0.8958333333333334
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.6377327100931007,
+              "sd": 0.007639703549241455,
+              "ciLow": 0.62824828597626,
+              "ciHigh": 0.6472171342099414,
+              "min": 0.6244784422809457,
+              "max": 0.6428431180051051
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.11118120198468587,
+              "high": 0.12306471860045201,
+              "halfWidth": 0.005941758307883073
+            },
+            "recall": {
+              "low": 0.35129272980461396,
+              "high": 0.38616811700944875,
+              "halfWidth": 0.017437693602417408
+            },
+            "hitRate": {
+              "low": 0.45437763373386353,
+              "high": 0.4938546449987379,
+              "halfWidth": 0.01973850563243713
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.005941758307883073,
+            "recall": 0.017437693602417408,
+            "hitRate": 0.01973850563243713
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0,
+              "sd": 0,
+              "ciLow": 0,
+              "ciHigh": 0,
+              "min": 0,
+              "max": 0
+            }
+          }
+        },
+        {
+          "key": "tuned-rules-only",
+          "label": "Luật – chỉ luật (tham số chọn trên validation)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.1615312607278881,
+              "sd": 0.003973587714932974,
+              "ciLow": 0.15659819088938182,
+              "ciHigh": 0.16646433056639437,
+              "min": 0.15601033181005716,
+              "max": 0.1654034949931316
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.533820342482232,
+              "sd": 0.010457595628668565,
+              "ciLow": 0.5208376041409569,
+              "ciHigh": 0.546803080823507,
+              "min": 0.515895092390225,
+              "max": 0.5407928802589003
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.5831652680102812,
+              "sd": 0.009836966705208568,
+              "ciLow": 0.5709530187189192,
+              "ciHigh": 0.5953775173016432,
+              "min": 0.5664613550566263,
+              "max": 0.5915963086589436
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.6916666666666667,
+              "sd": 0.03423265984407288,
+              "ciLow": 0.6491680196293785,
+              "ciHigh": 0.7341653137039548,
+              "min": 0.6458333333333334,
+              "max": 0.7291666666666666
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.956084607987283,
+              "sd": 0.00611766025217712,
+              "ciLow": 0.9484897472625959,
+              "ciHigh": 0.9636794687119701,
+              "min": 0.9489916963226572,
+              "max": 0.9640542133176193
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 3.3102095024919462,
+              "sd": 0.07108999301882782,
+              "ciLow": 3.2219537684954673,
+              "ciHigh": 3.398465236488425,
+              "min": 3.206636201072919,
+              "max": 3.396230119772236
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.1533424357511289,
+              "high": 0.1697545894500515,
+              "halfWidth": 0.0082060768494613
+            },
+            "recall": {
+              "low": 0.5131941953202201,
+              "high": 0.5543981114137433,
+              "halfWidth": 0.02060195804676156
+            },
+            "hitRate": {
+              "low": 0.5618701562981755,
+              "high": 0.6040875700988713,
+              "halfWidth": 0.02110870690034783
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.0082060768494613,
+            "recall": 0.02060195804676156,
+            "hitRate": 0.02110870690034783
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.1674829931972789,
+              "sd": 0.17970414958517095,
+              "ciLow": -0.055613408284317545,
+              "ciHigh": 0.39057939467887537,
+              "min": 0,
+              "max": 0.43333333333333335
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.21346938775510202,
+              "sd": 0.20370736656656332,
+              "ciLow": -0.03942616608269847,
+              "ciHigh": 0.46636494159290254,
+              "min": 0,
+              "max": 0.43333333333333335
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.23021768707482995,
+              "sd": 0.222128461176958,
+              "ciLow": -0.04554700989860691,
+              "ciHigh": 0.5059823840482668,
+              "min": 0,
+              "max": 0.48333333333333334
+            }
+          }
+        },
+        {
+          "key": "tuned-with-fallback",
+          "label": "Luật + fallback (tham số chọn trên validation)",
+          "metrics": {
+            "precision": {
+              "n": 5,
+              "mean": 0.17238095613505525,
+              "sd": 0.003890181409994471,
+              "ciLow": 0.16755143229999747,
+              "ciHigh": 0.17721047997011302,
+              "min": 0.16733558513809366,
+              "max": 0.17761633614765882
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.5588387542154659,
+              "sd": 0.009797971358855117,
+              "ciLow": 0.5466749162794681,
+              "ciHigh": 0.5710025921514638,
+              "min": 0.542602159083384,
+              "max": 0.5689868446887892
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.6313161674007184,
+              "sd": 0.009503268380452843,
+              "ciLow": 0.6195181928804471,
+              "ciHigh": 0.6431141419209897,
+              "min": 0.6177230280151004,
+              "max": 0.6444139014333399
+            },
+            "coverage": {
+              "n": 5,
+              "mean": 0.8625,
+              "sd": 0.023753654689565383,
+              "ciLow": 0.8330106704797218,
+              "ciHigh": 0.8919893295202783,
+              "min": 0.8333333333333334,
+              "max": 0.8958333333333334
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.956084607987283,
+              "sd": 0.00611766025217712,
+              "ciLow": 0.9484897472625959,
+              "ciHigh": 0.9636794687119701,
+              "min": 0.9489916963226572,
+              "max": 0.9640542133176193
+            },
+            "avgListLength": {
+              "n": 5,
+              "mean": 5,
+              "sd": 0,
+              "ciLow": 5,
+              "ciHigh": 5,
+              "min": 5,
+              "max": 5
+            }
+          },
+          "orderBootstrap": {
+            "precision": {
+              "low": 0.16440581698222675,
+              "high": 0.18036409408120296,
+              "halfWidth": 0.007979138549488108
+            },
+            "recall": {
+              "low": 0.5389423761985659,
+              "high": 0.5792532199904201,
+              "halfWidth": 0.020155421895927117
+            },
+            "hitRate": {
+              "low": 0.6116093735763679,
+              "high": 0.6510418153401816,
+              "halfWidth": 0.019716220881906756
+            }
+          },
+          "bootstrapHalfWidth": {
+            "precision": 0.007979138549488108,
+            "recall": 0.020155421895927117,
+            "hitRate": 0.019716220881906756
+          },
+          "rareQueries": {
+            "queries": {
+              "n": 5,
+              "mean": 61.6,
+              "sd": 11.216059914247962,
+              "ciLow": 47.67565483909567,
+              "ciHigh": 75.52434516090433,
+              "min": 49,
+              "max": 75
+            },
+            "recall": {
+              "n": 5,
+              "mean": 0.1674829931972789,
+              "sd": 0.17970414958517095,
+              "ciLow": -0.055613408284317545,
+              "ciHigh": 0.39057939467887537,
+              "min": 0,
+              "max": 0.43333333333333335
+            },
+            "hitRate": {
+              "n": 5,
+              "mean": 0.21346938775510202,
+              "sd": 0.20370736656656332,
+              "ciLow": -0.03942616608269847,
+              "ciHigh": 0.46636494159290254,
+              "min": 0,
+              "max": 0.43333333333333335
+            },
+            "ruleQueryRate": {
+              "n": 5,
+              "mean": 0.23021768707482995,
+              "sd": 0.222128461176958,
+              "ciLow": -0.04554700989860691,
+              "ciHigh": 0.5059823840482668,
+              "min": 0,
+              "max": 0.48333333333333334
+            }
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "a": "tuned-with-fallback",
+          "b": "current-with-fallback",
+          "recall": {
+            "n": 5,
+            "mean": 0.1903915550084887,
+            "sd": 0.01143603756855917,
+            "ciLow": 0.17619411530192985,
+            "ciHigh": 0.20458899471504755,
+            "min": 0.17872044506258872,
+            "max": 0.20467576117042552
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.15767708136036385,
+            "sd": 0.006635369699465917,
+            "ciLow": 0.14943950250718735,
+            "ciHigh": 0.16591466021354034,
+            "min": 0.1490164911583549,
+            "max": 0.16548042704626337
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.05526469730863389,
+            "sd": 0.003746006552503173,
+            "ciLow": 0.050614161504540796,
+            "ciHigh": 0.059915233112726986,
+            "min": 0.050952661559620666,
+            "max": 0.05994464215105434
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "co-occurrence",
+          "recall": {
+            "n": 5,
+            "mean": 0.20393230900094825,
+            "sd": 0.006131966092895964,
+            "ciLow": 0.19631968807655562,
+            "ciHigh": 0.21154492992534088,
+            "min": 0.19691701437181375,
+            "max": 0.21275866613945021
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.21604366403594008,
+            "sd": 0.0028215655671899697,
+            "ciLow": 0.21254078930523657,
+            "ciHigh": 0.2195465387666436,
+            "min": 0.21180210609974176,
+            "max": 0.21833889652464167
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.06695931789682377,
+            "sd": 0.0029426233380574654,
+            "ciLow": 0.06330615418773958,
+            "ciHigh": 0.07061248160590797,
+            "min": 0.06442742093891898,
+            "max": 0.07026492684856457
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "most-popular",
+          "recall": {
+            "n": 5,
+            "mean": 0.32110486198716837,
+            "sd": 0.007540859446035485,
+            "ciLow": 0.3117431493590931,
+            "ciHigh": 0.33046657461524365,
+            "min": 0.307768726405723,
+            "max": 0.3259539236861059
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.2898882096979756,
+            "sd": 0.008852793960272862,
+            "ciLow": 0.2788977763654452,
+            "ciHigh": 0.30087864303050593,
+            "min": 0.2775680508642957,
+            "max": 0.3003339226085249
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.09373255842563051,
+            "sd": 0.0037519518859013903,
+            "ciLow": 0.08907464169856033,
+            "ciHigh": 0.09839047515270069,
+            "min": 0.08825750049672886,
+            "max": 0.0985273905360374
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "category-based",
+          "recall": {
+            "n": 5,
+            "mean": 0.3912867678881162,
+            "sd": 0.012748631333249437,
+            "ciLow": 0.3754597890407776,
+            "ciHigh": 0.40711374673545486,
+            "min": 0.3754884429432417,
+            "max": 0.4061058389350207
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.3655234260402393,
+            "sd": 0.012599202756108381,
+            "ciLow": 0.3498819575326209,
+            "ciHigh": 0.3811648945478577,
+            "min": 0.34949334393006165,
+            "max": 0.3813760379596679
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.11633591593033418,
+            "sd": 0.0036885847391281406,
+            "ciLow": 0.11175666729440104,
+            "ciHigh": 0.12091516456626733,
+            "min": 0.11102722034572463,
+            "max": 0.12024515618822249
+          }
+        },
+        {
+          "a": "tuned-with-fallback",
+          "b": "tuned-rules-only",
+          "recall": {
+            "n": 5,
+            "mean": 0.02501841173323398,
+            "sd": 0.0029193968948267894,
+            "ciLow": 0.021394082839127304,
+            "ciHigh": 0.02864274062734066,
+            "min": 0.021877022653722267,
+            "max": 0.028274101708227528
+          },
+          "hitRate": {
+            "n": 5,
+            "mean": 0.04815089939043715,
+            "sd": 0.004638797965891856,
+            "ciLow": 0.04239199434689985,
+            "ciHigh": 0.05390980443397445,
+            "min": 0.042506919731119086,
+            "max": 0.05281759277439624
+          },
+          "precision": {
+            "n": 5,
+            "mean": 0.010849695407167131,
+            "sd": 0.0011571196689116531,
+            "ciLow": 0.009413171905546953,
+            "ciHigh": 0.012286218908787309,
+            "min": 0.009608540925268083,
+            "max": 0.012212841154527226
+          }
+        }
+      ]
+    }
+  }
+}

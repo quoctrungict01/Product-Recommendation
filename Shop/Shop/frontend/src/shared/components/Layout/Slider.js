@@ -1,3 +1,4 @@
+import { publicAsset } from "../../ultils/publicAsset";
 import React from "react";
 
 const Slider = () => {
@@ -17,19 +18,19 @@ const Slider = () => {
                 {/* The slideshow */}
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="images/slide-1.jpg" alt="Trungshop" />
+                        <img src={publicAsset("images/slide-1.jpg")} alt="Trungshop" />
                     </div>
                     <div className="carousel-item">
-                        <img src="images/slide-2.png" alt="Trungshop" />
+                        <img src={publicAsset("images/slide-2.png")} alt="Trungshop" />
                     </div>
                     <div className="carousel-item">
-                        <img src="images/slide-3.png" alt="Trungshop" />
+                        <img src={publicAsset("images/slide-3.png")} alt="Trungshop" />
                     </div>
                     <div className="carousel-item">
-                        <img src="images/slide-4.jpg" alt="Trungshop" />
+                        <img src={publicAsset("images/slide-4.jpg")} alt="Trungshop" />
                     </div>
                     <div className="carousel-item">
-                        <img src="images/slide-5.png" alt="Trungshop" />
+                        <img src={publicAsset("images/slide-5.png")} alt="Trungshop" />
                     </div>
                 </div>
                 {/* Left and right controls */}

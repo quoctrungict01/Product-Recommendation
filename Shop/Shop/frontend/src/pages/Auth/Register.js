@@ -173,8 +173,11 @@ const Register = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
+                                minLength={8}
+                                maxLength={128}
+                                title="Mật khẩu tối thiểu 8 ký tự, có cả chữ và số"
                             />
-                            <label>Password</label>
+                            <label>Password (≥ 8 ký tự, có chữ và số)</label>
                         </div>
 
                         <button

@@ -76,7 +76,7 @@
 
 // Frontend/src/pages/Auth/Login.js
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginApi } from "../../services/Api";
 import { LOGIN_SUCCESS } from "../../shared/constants/action-type";
@@ -89,6 +89,10 @@ const Login = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    // Chỉ quay lại đường dẫn nội bộ (bắt đầu bằng "/" nhưng không phải "//") để tránh chuyển hướng ra trang ngoài.
+    const nextParam = searchParams.get("next") || "";
+    const nextPath = nextParam.startsWith("/") && !nextParam.startsWith("//") && !nextParam.includes("\\") ? nextParam : "/";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -103,7 +107,7 @@ const Login = () => {
                     type: LOGIN_SUCCESS,
                     payload: data.data, // { token, user }
                 });
-                navigate("/"); // Về trang chủ sau khi đăng nhập
+                navigate(nextPath, { replace: true }); // về trang trước đó (vd. Tài khoản của tôi) hoặc trang chủ
             }
         } catch (err) {
             const msg = err.response?.data?.message || "Đăng nhập thất bại. Vui lòng thử lại.";

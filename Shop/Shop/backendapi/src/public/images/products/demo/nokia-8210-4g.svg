@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Nokia 8210 4G">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c4a6e"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs>
+  <rect width="600" height="600" rx="36" fill="url(#g)"/>
+  <rect x="235" y="120" width="130" height="270" rx="26" fill="none" stroke="#fff" stroke-width="10"/>
+  <rect x="258" y="148" width="84" height="80" rx="6" fill="#fff" opacity=".85"/>
+  <g fill="#fff"><circle cx="268" cy="262" r="9"/><circle cx="300" cy="262" r="9"/><circle cx="332" cy="262" r="9"/><circle cx="268" cy="298" r="9"/><circle cx="300" cy="298" r="9"/><circle cx="332" cy="298" r="9"/><circle cx="268" cy="334" r="9"/><circle cx="300" cy="334" r="9"/><circle cx="332" cy="334" r="9"/></g>
+  <g fill="#fff" font-family="Segoe UI, Roboto, Arial, sans-serif">
+  <text x="300" y="452" text-anchor="middle" font-size="32" font-weight="700">Nokia 8210 4G</text>
+  <text x="300" y="504" text-anchor="middle" font-size="20" opacity=".75">Nokia · Ảnh minh họa</text>
+  </g>
+</svg>

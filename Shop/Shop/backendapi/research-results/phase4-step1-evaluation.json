@@ -1,0 +1,1833 @@
+{
+  "meta": {
+    "generatedAt": "2026-10-26T10:01:45.094Z",
+    "node": "v20.20.2",
+    "command": "node scripts/evaluate-recommenders.js"
+  },
+  "dataset": {
+    "name": "GR2-demo (tái tạo offline)",
+    "source": "scripts/seed-demo/plan.js (dữ liệu giả lập có luật cài sẵn)",
+    "seed": 20261026,
+    "orderCount": 1000,
+    "productCount": 41,
+    "checksum": "d1eb602b9280f67944583f56b7e9f832539a7925"
+  },
+  "settings": {
+    "k": 5,
+    "ratios": {
+      "train": 0.7,
+      "validation": 0.1,
+      "test": 0.2
+    },
+    "grid": {
+      "minSupport": [
+        0.002,
+        0.003,
+        0.005,
+        0.01,
+        0.015,
+        0.02,
+        0.03
+      ],
+      "minConfidence": [
+        0,
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.4
+      ]
+    },
+    "bootstrap": 1000,
+    "bootstrapSeed": 20261026,
+    "randomSeed": 42,
+    "websiteDefaults": {
+      "minSupport": 0.01,
+      "minConfidence": 0.2
+    }
+  },
+  "split": {
+    "train": {
+      "orders": 700,
+      "ordersWithAtLeast2Items": 391,
+      "singleItemOrdersSkipped": 309,
+      "queries": 975,
+      "avgTruthSize": 1.7353846153846153,
+      "range": {
+        "from": 1774994200183,
+        "to": 1787368906203
+      }
+    },
+    "validation": {
+      "orders": 100,
+      "ordersWithAtLeast2Items": 54,
+      "singleItemOrdersSkipped": 46,
+      "queries": 130,
+      "avgTruthSize": 1.6307692307692307,
+      "range": {
+        "from": 1787375011975,
+        "to": 1789238888729
+      }
+    },
+    "test": {
+      "orders": 200,
+      "ordersWithAtLeast2Items": 114,
+      "singleItemOrdersSkipped": 86,
+      "queries": 281,
+      "avgTruthSize": 1.6939501779359432,
+      "range": {
+        "from": 1789244841521,
+        "to": 1792917917512
+      }
+    },
+    "leakageChecks": [
+      "max(time train) ≤ min(time validation)",
+      "max(time train ∪ validation) ≤ min(time test)",
+      "không đơn nào nằm ở hai tập",
+      "tham số chỉ chọn bằng validation; test chỉ dùng một lần"
+    ]
+  },
+  "tuning": {
+    "objective": "Recall@K của luật + fallback trên validation (hòa: HitRate, Precision, minSupport lớn, minConfidence lớn)",
+    "rows": [
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0,
+        "minSupportCount": 2,
+        "ruleCount": 704,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2676923076923075,
+          "recall": 0.8179487179487179,
+          "hitRate": 0.8538461538461538,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.9615384615384616,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2630769230769229,
+          "recall": 0.7987179487179487,
+          "hitRate": 0.8307692307692308,
+          "coverage": 0.7560975609756098,
+          "recommendedProducts": 31,
+          "ruleQueryRate": 0.9615384615384616,
+          "avgListLength": 3.7
+        }
+      },
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0.05,
+        "minSupportCount": 2,
+        "ruleCount": 608,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2676923076923075,
+          "recall": 0.8179487179487179,
+          "hitRate": 0.8538461538461538,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.9615384615384616,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2630769230769229,
+          "recall": 0.7987179487179487,
+          "hitRate": 0.8307692307692308,
+          "coverage": 0.7317073170731707,
+          "recommendedProducts": 30,
+          "ruleQueryRate": 0.9615384615384616,
+          "avgListLength": 3.5384615384615383
+        }
+      },
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0.1,
+        "minSupportCount": 2,
+        "ruleCount": 522,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2646153846153844,
+          "recall": 0.8076923076923076,
+          "hitRate": 0.8461538461538461,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.9615384615384616,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2599999999999998,
+          "recall": 0.7884615384615383,
+          "hitRate": 0.823076923076923,
+          "coverage": 0.6585365853658537,
+          "recommendedProducts": 27,
+          "ruleQueryRate": 0.9615384615384616,
+          "avgListLength": 3.2615384615384615
+        }
+      },
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0.2,
+        "minSupportCount": 2,
+        "ruleCount": 399,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.24307692307692275,
+          "recall": 0.7378205128205129,
+          "hitRate": 0.7846153846153846,
+          "coverage": 0.8536585365853658,
+          "recommendedProducts": 35,
+          "ruleQueryRate": 0.9076923076923077,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.23692307692307663,
+          "recall": 0.716025641025641,
+          "hitRate": 0.7538461538461538,
+          "coverage": 0.5609756097560976,
+          "recommendedProducts": 23,
+          "ruleQueryRate": 0.9076923076923077,
+          "avgListLength": 2.753846153846154
+        }
+      },
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0.3,
+        "minSupportCount": 2,
+        "ruleCount": 282,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.19846153846153816,
+          "recall": 0.6288461538461539,
+          "hitRate": 0.7307692307692307,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.17692307692307666,
+          "recall": 0.5807692307692309,
+          "hitRate": 0.6692307692307692,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 1.6307692307692307
+        }
+      },
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0.4,
+        "minSupportCount": 2,
+        "ruleCount": 249,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1815384615384613,
+          "recall": 0.5685897435897436,
+          "hitRate": 0.676923076923077,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.15230769230769212,
+          "recall": 0.4987179487179488,
+          "hitRate": 0.5923076923076923,
+          "coverage": 0.3902439024390244,
+          "recommendedProducts": 16,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 1.2230769230769232
+        }
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0,
+        "minSupportCount": 3,
+        "ruleCount": 510,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2676923076923075,
+          "recall": 0.8179487179487179,
+          "hitRate": 0.8538461538461538,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.9538461538461539,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2630769230769229,
+          "recall": 0.7987179487179487,
+          "hitRate": 0.8307692307692308,
+          "coverage": 0.6829268292682927,
+          "recommendedProducts": 28,
+          "ruleQueryRate": 0.9538461538461539,
+          "avgListLength": 3.5153846153846153
+        }
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0.05,
+        "minSupportCount": 3,
+        "ruleCount": 473,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2676923076923075,
+          "recall": 0.8179487179487179,
+          "hitRate": 0.8538461538461538,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.9538461538461539,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2630769230769229,
+          "recall": 0.7987179487179487,
+          "hitRate": 0.8307692307692308,
+          "coverage": 0.6829268292682927,
+          "recommendedProducts": 28,
+          "ruleQueryRate": 0.9538461538461539,
+          "avgListLength": 3.5153846153846153
+        }
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0.1,
+        "minSupportCount": 3,
+        "ruleCount": 413,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2646153846153844,
+          "recall": 0.8076923076923076,
+          "hitRate": 0.8461538461538461,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.9538461538461539,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2599999999999998,
+          "recall": 0.7884615384615383,
+          "hitRate": 0.823076923076923,
+          "coverage": 0.6097560975609756,
+          "recommendedProducts": 25,
+          "ruleQueryRate": 0.9538461538461539,
+          "avgListLength": 3.2384615384615385
+        }
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0.2,
+        "minSupportCount": 3,
+        "ruleCount": 316,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.24307692307692275,
+          "recall": 0.7378205128205129,
+          "hitRate": 0.7846153846153846,
+          "coverage": 0.8536585365853658,
+          "recommendedProducts": 35,
+          "ruleQueryRate": 0.9076923076923077,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.23692307692307663,
+          "recall": 0.716025641025641,
+          "hitRate": 0.7538461538461538,
+          "coverage": 0.5609756097560976,
+          "recommendedProducts": 23,
+          "ruleQueryRate": 0.9076923076923077,
+          "avgListLength": 2.753846153846154
+        }
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0.3,
+        "minSupportCount": 3,
+        "ruleCount": 224,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.19846153846153816,
+          "recall": 0.6288461538461539,
+          "hitRate": 0.7307692307692307,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.17692307692307666,
+          "recall": 0.5807692307692309,
+          "hitRate": 0.6692307692307692,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 1.6307692307692307
+        }
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0.4,
+        "minSupportCount": 3,
+        "ruleCount": 196,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1815384615384613,
+          "recall": 0.5685897435897436,
+          "hitRate": 0.676923076923077,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.15230769230769212,
+          "recall": 0.4987179487179488,
+          "hitRate": 0.5923076923076923,
+          "coverage": 0.3902439024390244,
+          "recommendedProducts": 16,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 1.2230769230769232
+        }
+      },
+      {
+        "minSupport": 0.005,
+        "minConfidence": 0,
+        "minSupportCount": 4,
+        "ruleCount": 362,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2646153846153844,
+          "recall": 0.8025641025641025,
+          "hitRate": 0.8384615384615385,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.9461538461538461,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2599999999999998,
+          "recall": 0.7833333333333333,
+          "hitRate": 0.8153846153846154,
+          "coverage": 0.6829268292682927,
+          "recommendedProducts": 28,
+          "ruleQueryRate": 0.9461538461538461,
+          "avgListLength": 3.4076923076923076
+        }
+      },
+      {
+        "minSupport": 0.005,
+        "minConfidence": 0.05,
+        "minSupportCount": 4,
+        "ruleCount": 359,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2646153846153844,
+          "recall": 0.8025641025641025,
+          "hitRate": 0.8384615384615385,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.9461538461538461,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2599999999999998,
+          "recall": 0.7833333333333333,
+          "hitRate": 0.8153846153846154,
+          "coverage": 0.6829268292682927,
+          "recommendedProducts": 28,
+          "ruleQueryRate": 0.9461538461538461,
+          "avgListLength": 3.4076923076923076
+        }
+      },
+      {
+        "minSupport": 0.005,
+        "minConfidence": 0.1,
+        "minSupportCount": 4,
+        "ruleCount": 328,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2630769230769229,
+          "recall": 0.7999999999999999,
+          "hitRate": 0.8384615384615385,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.9461538461538461,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2584615384615383,
+          "recall": 0.7807692307692307,
+          "hitRate": 0.8153846153846154,
+          "coverage": 0.6097560975609756,
+          "recommendedProducts": 25,
+          "ruleQueryRate": 0.9461538461538461,
+          "avgListLength": 3.207692307692308
+        }
+      },
+      {
+        "minSupport": 0.005,
+        "minConfidence": 0.2,
+        "minSupportCount": 4,
+        "ruleCount": 261,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.24307692307692275,
+          "recall": 0.7378205128205129,
+          "hitRate": 0.7846153846153846,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.9,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.23692307692307663,
+          "recall": 0.716025641025641,
+          "hitRate": 0.7538461538461538,
+          "coverage": 0.5609756097560976,
+          "recommendedProducts": 23,
+          "ruleQueryRate": 0.9,
+          "avgListLength": 2.746153846153846
+        }
+      },
+      {
+        "minSupport": 0.005,
+        "minConfidence": 0.3,
+        "minSupportCount": 4,
+        "ruleCount": 177,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.19846153846153816,
+          "recall": 0.6288461538461539,
+          "hitRate": 0.7307692307692307,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.17692307692307666,
+          "recall": 0.5807692307692309,
+          "hitRate": 0.6692307692307692,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 1.6307692307692307
+        }
+      },
+      {
+        "minSupport": 0.005,
+        "minConfidence": 0.4,
+        "minSupportCount": 4,
+        "ruleCount": 152,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1815384615384613,
+          "recall": 0.5685897435897436,
+          "hitRate": 0.676923076923077,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.15230769230769212,
+          "recall": 0.4987179487179488,
+          "hitRate": 0.5923076923076923,
+          "coverage": 0.3902439024390244,
+          "recommendedProducts": 16,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 1.2230769230769232
+        }
+      },
+      {
+        "minSupport": 0.01,
+        "minConfidence": 0,
+        "minSupportCount": 7,
+        "ruleCount": 268,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2415384615384612,
+          "recall": 0.717948717948718,
+          "hitRate": 0.7769230769230769,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8538461538461538,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.23538461538461508,
+          "recall": 0.6948717948717948,
+          "hitRate": 0.7538461538461538,
+          "coverage": 0.5365853658536586,
+          "recommendedProducts": 22,
+          "ruleQueryRate": 0.8538461538461538,
+          "avgListLength": 2.8230769230769233
+        }
+      },
+      {
+        "minSupport": 0.01,
+        "minConfidence": 0.05,
+        "minSupportCount": 7,
+        "ruleCount": 268,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2415384615384612,
+          "recall": 0.717948717948718,
+          "hitRate": 0.7769230769230769,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8538461538461538,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.23538461538461508,
+          "recall": 0.6948717948717948,
+          "hitRate": 0.7538461538461538,
+          "coverage": 0.5365853658536586,
+          "recommendedProducts": 22,
+          "ruleQueryRate": 0.8538461538461538,
+          "avgListLength": 2.8230769230769233
+        }
+      },
+      {
+        "minSupport": 0.01,
+        "minConfidence": 0.1,
+        "minSupportCount": 7,
+        "ruleCount": 258,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2415384615384612,
+          "recall": 0.717948717948718,
+          "hitRate": 0.7769230769230769,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8538461538461538,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.23538461538461508,
+          "recall": 0.6948717948717948,
+          "hitRate": 0.7538461538461538,
+          "coverage": 0.5365853658536586,
+          "recommendedProducts": 22,
+          "ruleQueryRate": 0.8538461538461538,
+          "avgListLength": 2.8230769230769233
+        }
+      },
+      {
+        "minSupport": 0.01,
+        "minConfidence": 0.2,
+        "minSupportCount": 7,
+        "ruleCount": 212,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2292307692307689,
+          "recall": 0.6903846153846155,
+          "hitRate": 0.7538461538461538,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8461538461538461,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2215384615384612,
+          "recall": 0.6647435897435898,
+          "hitRate": 0.7230769230769231,
+          "coverage": 0.5121951219512195,
+          "recommendedProducts": 21,
+          "ruleQueryRate": 0.8461538461538461,
+          "avgListLength": 2.5076923076923077
+        }
+      },
+      {
+        "minSupport": 0.01,
+        "minConfidence": 0.3,
+        "minSupportCount": 7,
+        "ruleCount": 153,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.19846153846153816,
+          "recall": 0.6288461538461539,
+          "hitRate": 0.7307692307692307,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.17692307692307666,
+          "recall": 0.5807692307692309,
+          "hitRate": 0.6692307692307692,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8307692307692308,
+          "avgListLength": 1.6307692307692307
+        }
+      },
+      {
+        "minSupport": 0.01,
+        "minConfidence": 0.4,
+        "minSupportCount": 7,
+        "ruleCount": 131,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1815384615384613,
+          "recall": 0.5685897435897436,
+          "hitRate": 0.676923076923077,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.15230769230769212,
+          "recall": 0.4987179487179488,
+          "hitRate": 0.5923076923076923,
+          "coverage": 0.3902439024390244,
+          "recommendedProducts": 16,
+          "ruleQueryRate": 0.7230769230769231,
+          "avgListLength": 1.2230769230769232
+        }
+      },
+      {
+        "minSupport": 0.015,
+        "minConfidence": 0,
+        "minSupportCount": 11,
+        "ruleCount": 130,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.21999999999999972,
+          "recall": 0.6589743589743589,
+          "hitRate": 0.7230769230769231,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2107692307692305,
+          "recall": 0.6294871794871795,
+          "hitRate": 0.6923076923076923,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 2.3923076923076922
+        }
+      },
+      {
+        "minSupport": 0.015,
+        "minConfidence": 0.05,
+        "minSupportCount": 11,
+        "ruleCount": 130,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.21999999999999972,
+          "recall": 0.6589743589743589,
+          "hitRate": 0.7230769230769231,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2107692307692305,
+          "recall": 0.6294871794871795,
+          "hitRate": 0.6923076923076923,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 2.3923076923076922
+        }
+      },
+      {
+        "minSupport": 0.015,
+        "minConfidence": 0.1,
+        "minSupportCount": 11,
+        "ruleCount": 130,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.21999999999999972,
+          "recall": 0.6589743589743589,
+          "hitRate": 0.7230769230769231,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2107692307692305,
+          "recall": 0.6294871794871795,
+          "hitRate": 0.6923076923076923,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 2.3923076923076922
+        }
+      },
+      {
+        "minSupport": 0.015,
+        "minConfidence": 0.2,
+        "minSupportCount": 11,
+        "ruleCount": 119,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.21384615384615352,
+          "recall": 0.6442307692307693,
+          "hitRate": 0.7153846153846154,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.2046153846153843,
+          "recall": 0.6147435897435897,
+          "hitRate": 0.6846153846153846,
+          "coverage": 0.4634146341463415,
+          "recommendedProducts": 19,
+          "ruleQueryRate": 0.8076923076923077,
+          "avgListLength": 2.253846153846154
+        }
+      },
+      {
+        "minSupport": 0.015,
+        "minConfidence": 0.3,
+        "minSupportCount": 11,
+        "ruleCount": 83,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.18461538461538435,
+          "recall": 0.5852564102564102,
+          "hitRate": 0.6923076923076923,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.7923076923076923,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.16153846153846127,
+          "recall": 0.5333333333333334,
+          "hitRate": 0.6307692307692307,
+          "coverage": 0.43902439024390244,
+          "recommendedProducts": 18,
+          "ruleQueryRate": 0.7923076923076923,
+          "avgListLength": 1.4692307692307693
+        }
+      },
+      {
+        "minSupport": 0.015,
+        "minConfidence": 0.4,
+        "minSupportCount": 11,
+        "ruleCount": 71,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.17230769230769205,
+          "recall": 0.5391025641025641,
+          "hitRate": 0.6461538461538462,
+          "coverage": 0.926829268292683,
+          "recommendedProducts": 38,
+          "ruleQueryRate": 0.7,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.14153846153846136,
+          "recall": 0.46538461538461545,
+          "hitRate": 0.5615384615384615,
+          "coverage": 0.36585365853658536,
+          "recommendedProducts": 15,
+          "ruleQueryRate": 0.7,
+          "avgListLength": 1.123076923076923
+        }
+      },
+      {
+        "minSupport": 0.02,
+        "minConfidence": 0,
+        "minSupportCount": 14,
+        "ruleCount": 114,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.19384615384615358,
+          "recall": 0.5833333333333334,
+          "hitRate": 0.6230769230769231,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1846153846153844,
+          "recall": 0.5538461538461539,
+          "hitRate": 0.5769230769230769,
+          "coverage": 0.36585365853658536,
+          "recommendedProducts": 15,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 2.0692307692307694
+        }
+      },
+      {
+        "minSupport": 0.02,
+        "minConfidence": 0.05,
+        "minSupportCount": 14,
+        "ruleCount": 114,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.19384615384615358,
+          "recall": 0.5833333333333334,
+          "hitRate": 0.6230769230769231,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1846153846153844,
+          "recall": 0.5538461538461539,
+          "hitRate": 0.5769230769230769,
+          "coverage": 0.36585365853658536,
+          "recommendedProducts": 15,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 2.0692307692307694
+        }
+      },
+      {
+        "minSupport": 0.02,
+        "minConfidence": 0.1,
+        "minSupportCount": 14,
+        "ruleCount": 114,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.19384615384615358,
+          "recall": 0.5833333333333334,
+          "hitRate": 0.6230769230769231,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1846153846153844,
+          "recall": 0.5538461538461539,
+          "hitRate": 0.5769230769230769,
+          "coverage": 0.36585365853658536,
+          "recommendedProducts": 15,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 2.0692307692307694
+        }
+      },
+      {
+        "minSupport": 0.02,
+        "minConfidence": 0.2,
+        "minSupportCount": 14,
+        "ruleCount": 107,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.18769230769230744,
+          "recall": 0.5685897435897436,
+          "hitRate": 0.6153846153846154,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.17846153846153823,
+          "recall": 0.5391025641025642,
+          "hitRate": 0.5692307692307692,
+          "coverage": 0.36585365853658536,
+          "recommendedProducts": 15,
+          "ruleQueryRate": 0.6846153846153846,
+          "avgListLength": 1.9307692307692308
+        }
+      },
+      {
+        "minSupport": 0.02,
+        "minConfidence": 0.3,
+        "minSupportCount": 14,
+        "ruleCount": 74,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1584615384615382,
+          "recall": 0.5096153846153846,
+          "hitRate": 0.5923076923076923,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.6692307692307692,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.13538461538461524,
+          "recall": 0.4576923076923077,
+          "hitRate": 0.5153846153846153,
+          "coverage": 0.34146341463414637,
+          "recommendedProducts": 14,
+          "ruleQueryRate": 0.6692307692307692,
+          "avgListLength": 1.2384615384615385
+        }
+      },
+      {
+        "minSupport": 0.02,
+        "minConfidence": 0.4,
+        "minSupportCount": 14,
+        "ruleCount": 64,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.15076923076923057,
+          "recall": 0.4788461538461538,
+          "hitRate": 0.5615384615384615,
+          "coverage": 0.8780487804878049,
+          "recommendedProducts": 36,
+          "ruleQueryRate": 0.5769230769230769,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.11999999999999984,
+          "recall": 0.40512820512820513,
+          "hitRate": 0.46153846153846156,
+          "coverage": 0.2926829268292683,
+          "recommendedProducts": 12,
+          "ruleQueryRate": 0.5769230769230769,
+          "avgListLength": 0.9538461538461539
+        }
+      },
+      {
+        "minSupport": 0.03,
+        "minConfidence": 0,
+        "minSupportCount": 21,
+        "ruleCount": 40,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.14923076923076903,
+          "recall": 0.466025641025641,
+          "hitRate": 0.5461538461538461,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.13538461538461524,
+          "recall": 0.4282051282051282,
+          "hitRate": 0.4846153846153846,
+          "coverage": 0.2682926829268293,
+          "recommendedProducts": 11,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 1.2153846153846153
+        }
+      },
+      {
+        "minSupport": 0.03,
+        "minConfidence": 0.05,
+        "minSupportCount": 21,
+        "ruleCount": 40,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.14923076923076903,
+          "recall": 0.466025641025641,
+          "hitRate": 0.5461538461538461,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.13538461538461524,
+          "recall": 0.4282051282051282,
+          "hitRate": 0.4846153846153846,
+          "coverage": 0.2682926829268293,
+          "recommendedProducts": 11,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 1.2153846153846153
+        }
+      },
+      {
+        "minSupport": 0.03,
+        "minConfidence": 0.1,
+        "minSupportCount": 21,
+        "ruleCount": 40,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.14923076923076903,
+          "recall": 0.466025641025641,
+          "hitRate": 0.5461538461538461,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.13538461538461524,
+          "recall": 0.4282051282051282,
+          "hitRate": 0.4846153846153846,
+          "coverage": 0.2682926829268293,
+          "recommendedProducts": 11,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 1.2153846153846153
+        }
+      },
+      {
+        "minSupport": 0.03,
+        "minConfidence": 0.2,
+        "minSupportCount": 21,
+        "ruleCount": 40,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.14923076923076903,
+          "recall": 0.466025641025641,
+          "hitRate": 0.5461538461538461,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.13538461538461524,
+          "recall": 0.4282051282051282,
+          "hitRate": 0.4846153846153846,
+          "coverage": 0.2682926829268293,
+          "recommendedProducts": 11,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 1.2153846153846153
+        }
+      },
+      {
+        "minSupport": 0.03,
+        "minConfidence": 0.3,
+        "minSupportCount": 21,
+        "ruleCount": 35,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.1430769230769229,
+          "recall": 0.4512820512820513,
+          "hitRate": 0.5384615384615384,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.11999999999999984,
+          "recall": 0.39935897435897433,
+          "hitRate": 0.46153846153846156,
+          "coverage": 0.2682926829268293,
+          "recommendedProducts": 11,
+          "ruleQueryRate": 0.5846153846153846,
+          "avgListLength": 0.9846153846153847
+        }
+      },
+      {
+        "minSupport": 0.03,
+        "minConfidence": 0.4,
+        "minSupportCount": 21,
+        "ruleCount": 32,
+        "withFallback": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.14307692307692293,
+          "recall": 0.4403846153846153,
+          "hitRate": 0.5230769230769231,
+          "coverage": 0.9024390243902439,
+          "recommendedProducts": 37,
+          "ruleQueryRate": 0.5153846153846153,
+          "avgListLength": 5
+        },
+        "rulesOnly": {
+          "k": 5,
+          "queries": 130,
+          "orders": 54,
+          "precision": 0.11230769230769218,
+          "recall": 0.3666666666666666,
+          "hitRate": 0.4230769230769231,
+          "coverage": 0.24390243902439024,
+          "recommendedProducts": 10,
+          "ruleQueryRate": 0.5153846153846153,
+          "avgListLength": 0.8615384615384616
+        }
+      }
+    ],
+    "selected": {
+      "minSupport": 0.003,
+      "minConfidence": 0.05
+    },
+    "selectedOnGridEdge": [],
+    "top5": [
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0.05,
+        "precision": 0.2676923076923075,
+        "recall": 0.8179487179487179,
+        "hitRate": 0.8538461538461538,
+        "coverage": 0.8780487804878049,
+        "ruleQueryRate": 0.9538461538461539
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0,
+        "precision": 0.2676923076923075,
+        "recall": 0.8179487179487179,
+        "hitRate": 0.8538461538461538,
+        "coverage": 0.8780487804878049,
+        "ruleQueryRate": 0.9538461538461539
+      },
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0.05,
+        "precision": 0.2676923076923075,
+        "recall": 0.8179487179487179,
+        "hitRate": 0.8538461538461538,
+        "coverage": 0.9024390243902439,
+        "ruleQueryRate": 0.9615384615384616
+      },
+      {
+        "minSupport": 0.002,
+        "minConfidence": 0,
+        "precision": 0.2676923076923075,
+        "recall": 0.8179487179487179,
+        "hitRate": 0.8538461538461538,
+        "coverage": 0.926829268292683,
+        "ruleQueryRate": 0.9615384615384616
+      },
+      {
+        "minSupport": 0.003,
+        "minConfidence": 0.1,
+        "precision": 0.2646153846153844,
+        "recall": 0.8076923076923076,
+        "hitRate": 0.8461538461538461,
+        "coverage": 0.8780487804878049,
+        "ruleQueryRate": 0.9538461538461539
+      }
+    ]
+  },
+  "results": [
+    {
+      "name": "random",
+      "label": "Random (seed 42)",
+      "params": null,
+      "modelStats": null,
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.024911032028469764,
+        "recall": 0.07591933570581257,
+        "hitRate": 0.12099644128113879,
+        "coverage": 1,
+        "recommendedProducts": 41,
+        "ruleQueryRate": 0,
+        "avgListLength": 5
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.024911032028469764,
+          "low": 0.01758241758241759,
+          "high": 0.03286713286713286
+        },
+        "recall": {
+          "mean": 0.07591933570581257,
+          "low": 0.05412054120541206,
+          "high": 0.10372960372960373
+        },
+        "hit": {
+          "mean": 0.12099644128113879,
+          "low": 0.08633093525179857,
+          "high": 0.15862068965517243
+        }
+      }
+    },
+    {
+      "name": "most-popular",
+      "label": "Most Popular",
+      "params": null,
+      "modelStats": null,
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.11743772241992867,
+        "recall": 0.36298932384341637,
+        "hitRate": 0.4377224199288256,
+        "coverage": 0.14634146341463414,
+        "recommendedProducts": 6,
+        "ruleQueryRate": 0,
+        "avgListLength": 5
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.11743772241992867,
+          "low": 0.08679245283018855,
+          "high": 0.1527777777777778
+        },
+        "recall": {
+          "mean": 0.36298932384341637,
+          "low": 0.28965517241379307,
+          "high": 0.4398625429553267
+        },
+        "hit": {
+          "mean": 0.4377224199288256,
+          "low": 0.3508771929824561,
+          "high": 0.5280898876404494
+        }
+      }
+    },
+    {
+      "name": "category-based",
+      "label": "Category-Based (cùng danh mục → bán chạy)",
+      "params": null,
+      "modelStats": null,
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.07046263345195719,
+        "recall": 0.22835112692763934,
+        "hitRate": 0.3309608540925267,
+        "coverage": 0.9512195121951219,
+        "recommendedProducts": 39,
+        "ruleQueryRate": 0,
+        "avgListLength": 5
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.07046263345195719,
+          "low": 0.05512367491166072,
+          "high": 0.08591065292096202
+        },
+        "recall": {
+          "mean": 0.22835112692763934,
+          "low": 0.17333333333333337,
+          "high": 0.2810578105781058
+        },
+        "hit": {
+          "mean": 0.3309608540925267,
+          "low": 0.26277372262773724,
+          "high": 0.3958333333333333
+        }
+      }
+    },
+    {
+      "name": "co-occurrence",
+      "label": "Co-occurrence (logic cũ, sup ≥ 1%, conf ≥ 1%)",
+      "params": null,
+      "modelStats": null,
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.2049822064056942,
+        "recall": 0.573546856465006,
+        "hitRate": 0.6334519572953736,
+        "coverage": 0.5365853658536586,
+        "recommendedProducts": 22,
+        "ruleQueryRate": 0,
+        "avgListLength": 2.790035587188612
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.2049822064056942,
+          "low": 0.1650909090909091,
+          "high": 0.24379562043795666
+        },
+        "recall": {
+          "mean": 0.573546856465006,
+          "low": 0.48850574712643663,
+          "high": 0.6488294314381272
+        },
+        "hit": {
+          "mean": 0.6334519572953736,
+          "low": 0.5464684014869888,
+          "high": 0.7167832167832168
+        }
+      }
+    },
+    {
+      "name": "rules-fpgrowth-rules-only",
+      "label": "Hệ thống hiện tại – chỉ luật (tham số website: sup 0.01, conf 0.2)",
+      "params": {
+        "algorithm": "fpgrowth",
+        "minSupport": 0.01,
+        "minConfidence": 0.2,
+        "fallback": false
+      },
+      "modelStats": {
+        "miningMs": 1.125699999999938,
+        "ruleCount": 196,
+        "itemsetCount": 91,
+        "minSupportCount": 8
+      },
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.18505338078291841,
+        "recall": 0.526097271648873,
+        "hitRate": 0.5836298932384342,
+        "coverage": 0.5121951219512195,
+        "recommendedProducts": 21,
+        "ruleQueryRate": 0.7686832740213523,
+        "avgListLength": 2.3096085409252667
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.18505338078291841,
+          "low": 0.14904942965779472,
+          "high": 0.22108843537415018
+        },
+        "recall": {
+          "mean": 0.526097271648873,
+          "low": 0.45006016847172087,
+          "high": 0.6034002229654404
+        },
+        "hit": {
+          "mean": 0.5836298932384342,
+          "low": 0.5053763440860215,
+          "high": 0.6643598615916955
+        }
+      }
+    },
+    {
+      "name": "rules-fpgrowth-with-fallback",
+      "label": "Hệ thống hiện tại – luật + fallback (tham số website)",
+      "params": {
+        "algorithm": "fpgrowth",
+        "minSupport": 0.01,
+        "minConfidence": 0.2,
+        "fallback": true
+      },
+      "modelStats": {
+        "miningMs": 0.6469999999999345,
+        "ruleCount": 196,
+        "itemsetCount": 91,
+        "minSupportCount": 8
+      },
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.19288256227758035,
+        "recall": 0.5441874258600237,
+        "hitRate": 0.6156583629893239,
+        "coverage": 0.975609756097561,
+        "recommendedProducts": 40,
+        "ruleQueryRate": 0.7686832740213523,
+        "avgListLength": 5
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.19288256227758035,
+          "low": 0.1585185185185187,
+          "high": 0.22905405405405457
+        },
+        "recall": {
+          "mean": 0.5441874258600237,
+          "low": 0.4720216606498196,
+          "high": 0.6196868008948546
+        },
+        "hit": {
+          "mean": 0.6156583629893239,
+          "low": 0.5428571428571428,
+          "high": 0.6958041958041958
+        }
+      }
+    },
+    {
+      "name": "rules-fpgrowth-rules-only",
+      "label": "Luật – chỉ luật (tham số chọn trên validation: sup 0.003, conf 0.05)",
+      "params": {
+        "algorithm": "fpgrowth",
+        "minSupport": 0.003,
+        "minConfidence": 0.05,
+        "fallback": false
+      },
+      "modelStats": {
+        "miningMs": 0.8828000000000884,
+        "ruleCount": 505,
+        "itemsetCount": 149,
+        "minSupportCount": 3
+      },
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.2476868327402141,
+        "recall": 0.7010676156583628,
+        "hitRate": 0.7295373665480427,
+        "coverage": 0.6585365853658537,
+        "recommendedProducts": 27,
+        "ruleQueryRate": 0.9323843416370107,
+        "avgListLength": 3.6156583629893237
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.2476868327402141,
+          "low": 0.20656934306569386,
+          "high": 0.29328859060402773
+        },
+        "recall": {
+          "mean": 0.7010676156583628,
+          "low": 0.6260762607626076,
+          "high": 0.7718120805369127
+        },
+        "hit": {
+          "mean": 0.7295373665480427,
+          "low": 0.6534296028880866,
+          "high": 0.8020833333333334
+        }
+      }
+    },
+    {
+      "name": "rules-fpgrowth-with-fallback",
+      "label": "Luật + fallback (tham số chọn trên validation)",
+      "params": {
+        "algorithm": "fpgrowth",
+        "minSupport": 0.003,
+        "minConfidence": 0.05,
+        "fallback": true
+      },
+      "modelStats": {
+        "miningMs": 0.8889000000000351,
+        "ruleCount": 505,
+        "itemsetCount": 149,
+        "minSupportCount": 3
+      },
+      "summary": {
+        "k": 5,
+        "queries": 281,
+        "orders": 114,
+        "precision": 0.2519572953736661,
+        "recall": 0.7117437722419928,
+        "hitRate": 0.7508896797153025,
+        "coverage": 0.926829268292683,
+        "recommendedProducts": 38,
+        "ruleQueryRate": 0.9323843416370107,
+        "avgListLength": 5
+      },
+      "ci": {
+        "precision": {
+          "mean": 0.2519572953736661,
+          "low": 0.2116363636363641,
+          "high": 0.2979020979020982
+        },
+        "recall": {
+          "mean": 0.7117437722419928,
+          "low": 0.6388888888888888,
+          "high": 0.7804136253041362
+        },
+        "hit": {
+          "mean": 0.7508896797153025,
+          "low": 0.678030303030303,
+          "high": 0.8197879858657244
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "a": "Luật + fallback (tham số chọn trên validation)",
+      "b": "Most Popular",
+      "recall": {
+        "mean": 0.34875444839857656,
+        "low": 0.26932367149758446,
+        "high": 0.4325980392156861
+      },
+      "hit": {
+        "mean": 0.31316725978647686,
+        "low": 0.22509225092250923,
+        "high": 0.4068965517241379
+      }
+    },
+    {
+      "a": "Luật + fallback (tham số chọn trên validation)",
+      "b": "Category-Based (cùng danh mục → bán chạy)",
+      "recall": {
+        "mean": 0.48339264531435355,
+        "low": 0.4078787878787879,
+        "high": 0.5587529976019185
+      },
+      "hit": {
+        "mean": 0.4199288256227758,
+        "low": 0.3418181818181818,
+        "high": 0.4966216216216216
+      }
+    },
+    {
+      "a": "Luật + fallback (tham số chọn trên validation)",
+      "b": "Co-occurrence (logic cũ, sup ≥ 1%, conf ≥ 1%)",
+      "recall": {
+        "mean": 0.13819691577698695,
+        "low": 0.09523809523809525,
+        "high": 0.19193742478941037
+      },
+      "hit": {
+        "mean": 0.11743772241992882,
+        "low": 0.072992700729927,
+        "high": 0.1684981684981685
+      }
+    },
+    {
+      "a": "Luật + fallback (tham số chọn trên validation)",
+      "b": "Hệ thống hiện tại – luật + fallback (tham số website)",
+      "recall": {
+        "mean": 0.16755634638196915,
+        "low": 0.11695906432748539,
+        "high": 0.22741147741147738
+      },
+      "hit": {
+        "mean": 0.13523131672597866,
+        "low": 0.08741258741258741,
+        "high": 0.18928571428571428
+      }
+    }
+  ],
+  "algorithmCheck": [
+    {
+      "params": {
+        "minSupport": 0.01,
+        "minConfidence": 0.2
+      },
+      "queries": 411,
+      "identical": true,
+      "mismatches": 0,
+      "timings": {
+        "apriori": {
+          "medianFitMs": 2.10450000000003,
+          "ruleCount": 196,
+          "itemsetCount": 91
+        },
+        "fpgrowth": {
+          "medianFitMs": 0.8574999999999591,
+          "ruleCount": 196,
+          "itemsetCount": 91
+        }
+      },
+      "timingRuns": 5
+    },
+    {
+      "params": {
+        "minSupport": 0.003,
+        "minConfidence": 0.05
+      },
+      "queries": 411,
+      "identical": true,
+      "mismatches": 0,
+      "timings": {
+        "apriori": {
+          "medianFitMs": 1.6662999999999784,
+          "ruleCount": 505,
+          "itemsetCount": 149
+        },
+        "fpgrowth": {
+          "medianFitMs": 1.123199999999997,
+          "ruleCount": 505,
+          "itemsetCount": 149
+        }
+      },
+      "timingRuns": 5
+    }
+  ]
+}

@@ -1,8 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+// Trang 404: chỉ hiện khi URL không khớp route nào. Hình minh họa giới hạn kích thước, kèm lời nhắn và link về trang chủ.
 const NotFound = () => {
     return (
         <>
-            <div className="wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+            <div className="notfound-text" style={{ textAlign: "center", margin: "20px 0 10px" }}>
+                <h2 style={{ fontSize: 22, margin: "0 0 8px" }}>Không tìm thấy trang</h2>
+                <p style={{ margin: 0 }}>
+                    Đường dẫn không tồn tại hoặc đã được thay đổi. <Link to="/">Về trang chủ</Link>
+                </p>
+            </div>
+            <div className="wrapper" style={{ maxWidth: 640, margin: "0 auto" }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="404">
                 <title>404</title>
                 <g id="Layer_12 yellow-back-fig" data-name="Layer 12">
                     <path className="cls-1" d="M600.87,872H156a4,4,0,0,0-3.78,4.19h0a4,4,0,0,0,3.78,4.19H600.87a4,4,0,0,0,3.78-4.19h0A4,4,0,0,0,600.87,872Z" />

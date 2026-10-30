@@ -53,9 +53,10 @@
 
 
 // Frontend/src/shared/components/Layout/Header.js
+import { publicAsset } from "../../ultils/publicAsset";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { LOGOUT } from "../../../shared/constants/action-type";
 
 const getDisplayName = (user) => {
@@ -64,9 +65,48 @@ const getDisplayName = (user) => {
     return user.email ? user.email.split("@")[0] : "Tài khoản";
 };
 
+// Gõ trên trang /Search: kết quả cập nhật sau khi ngừng gõ SEARCH_DEBOUNCE_MS (không gọi API mỗi phím).
+// Ở trang khác: Enter hoặc nút "Tìm kiếm" mới chuyển sang trang kết quả.
+export const SEARCH_DEBOUNCE_MS = 400;
+
+/** URL trang kết quả: giữ bộ lọc đang chọn khi đã ở /Search, luôn về trang 1. */
+const searchUrl = (keyword, location) => {
+    const params = new URLSearchParams(location.pathname === "/Search" ? location.search : "");
+    params.delete("page");
+    params.delete("keyword");
+    const q = keyword.trim().slice(0, 100);
+    if (q) params.set("q", q);
+    else params.delete("q");
+    const qs = params.toString();
+    return qs ? `/Search?${qs}` : "/Search";
+};
+
 const Header = () => {
-    const [keyword, setKeyword] = React.useState("");
     const navigate = useNavigate();
+    const location = useLocation();
+    const urlKeyword = React.useMemo(() => {
+        if (location.pathname !== "/Search") return null;
+        const p = new URLSearchParams(location.search);
+        return p.get("q") ?? p.get("keyword") ?? "";
+    }, [location.pathname, location.search]);
+    const [keyword, setKeyword] = React.useState(urlKeyword || "");
+    const typed = React.useRef(false);
+
+    // Đồng bộ ô tìm kiếm khi URL đổi (nút Back, bấm link) — không ghi đè lúc người dùng đang gõ.
+    React.useEffect(() => {
+        if (urlKeyword !== null && !typed.current) setKeyword((k) => (k.trim() === urlKeyword.trim() ? k : urlKeyword));
+    }, [urlKeyword]);
+
+    // Tìm kiếm tức thời (chỉ trên trang /Search), có debounce.
+    React.useEffect(() => {
+        if (!typed.current || location.pathname !== "/Search") return undefined;
+        const timer = setTimeout(() => {
+            typed.current = false;
+            if (keyword.trim() !== (urlKeyword || "").trim()) navigate(searchUrl(keyword, location), { replace: true });
+        }, SEARCH_DEBOUNCE_MS);
+        return () => clearTimeout(timer);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [keyword]);
     const dispatch = useDispatch();
 
     const totalCart = useSelector(({ Cart }) =>
@@ -76,11 +116,16 @@ const Header = () => {
     const { isLoggedIn, user } = useSelector(({ Auth }) => Auth);
     const displayName = getDisplayName(user);
 
-    const onChangeInput = (e) => setKeyword(e.target.value);
+    const onChangeInput = (e) => {
+        typed.current = true;
+        setKeyword(e.target.value);
+    };
 
-    const onClickButton = (e) => {
+    // Enter trong ô hoặc bấm nút: tìm ngay (encode từ khóa, không ghép chuỗi thô vào URL).
+    const onSubmitSearch = (e) => {
         e.preventDefault();
-        navigate(`/Search?keyword=${keyword}`);
+        typed.current = false;
+        navigate(searchUrl(keyword, location));
     };
 
     const handleLogout = () => {
@@ -106,6 +151,7 @@ const Header = () => {
                     font-size: 13px;
                     transition: background 0.2s;
                     cursor: pointer;
+                    white-space: nowrap;
                 }
                 .header-cart-btn:hover {
                     background: rgba(255,255,255,0.1);
@@ -156,6 +202,24 @@ const Header = () => {
                     text-overflow: ellipsis;
                     white-space: nowrap;
                 }
+                .header-account-link {
+                    color: #fff;
+                    font-size: 13px;
+                    border: 1px solid rgba(255,255,255,0.3);
+                    border-radius: 6px;
+                    padding: 4px 10px;
+                    white-space: nowrap;
+                    text-decoration: none;
+                }
+                .header-account-link:hover {
+                    background: rgba(255,255,255,0.1);
+                    color: #fff;
+                    text-decoration: none;
+                }
+                @media (max-width: 991px) {
+                    #header-right { flex-wrap: wrap; height: auto; padding: 8px 0; justify-content: center; }
+                    .header-user-area { flex-wrap: wrap; justify-content: center; }
+                }
                 .header-logout-btn {
                     background: transparent;
                     border: 1px solid rgba(255,255,255,0.4);
@@ -176,7 +240,8 @@ const Header = () => {
                     align-items: center;
                     justify-content: flex-end;
                     gap: 10px;
-                    height: 60px;
+                    /* min-height (không phải height): trên màn hình hẹp các nút xuống dòng mà vẫn nằm trong nền tối */
+                    min-height: 60px;
                 }
             `}</style>
 
@@ -187,21 +252,24 @@ const Header = () => {
                         <div id="logo" className="col-lg-3 col-md-3 col-sm-12">
                             <h1>
                                 <Link to="/">
-                                    <img className="img-fluid" src="images/nameshopp.png" alt="TrungShop" />
+                                    <img className="img-fluid" src={publicAsset("images/nameshopp.png")} alt="TrungShop" />
                                 </Link>
                             </h1>
                         </div>
 
                         {/* Search */}
                         <div id="search" className="col-lg-5 col-md-5 col-sm-12">
-                            <form className="form-inline">
+                            <form className="form-inline" role="search" onSubmit={onSubmitSearch}>
                                 <input
                                     onChange={onChangeInput}
+                                    value={keyword}
                                     className="form-control mt-3"
                                     type="search"
-                                    placeholder="Tìm kiếm"
+                                    maxLength={100}
+                                    placeholder="Tìm kiếm sản phẩm"
+                                    aria-label="Tìm kiếm sản phẩm"
                                 />
-                                <button onClick={onClickButton} className="btn btn-danger mt-3" type="submit">
+                                <button className="btn btn-danger mt-3" type="submit">
                                     Tìm kiếm
                                 </button>
                             </form>
@@ -224,6 +292,9 @@ const Header = () => {
                                         <span className="header-user-name">
                                             👋 <b>{displayName}</b>
                                         </span>
+                                        <Link to="/account/profile" className="header-account-link">
+                                            Tài khoản của tôi
+                                        </Link>
                                         <button className="header-logout-btn" onClick={handleLogout}>
                                             Đăng xuất
                                         </button>

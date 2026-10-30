@@ -5,7 +5,7 @@ const ProductModel = require('../../models/product');
 
 exports.getProductSuggestions = async (req, res) => {
     const { id } = req.params; // id của sản phẩm được chọn
-    const minSup = 0.01; // Ngưỡng độ hỗ trợ
+    const minSup = 5; // Ngưỡng độ hỗ trợ
     const minConf = 0.01; // Ngưỡng độ tin cậy
 
     try {

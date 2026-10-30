@@ -173,31 +173,36 @@
 
 import React, { useState, useEffect } from "react";
 import { ADD_TO_CART } from "../../shared/constants/action-type";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { getProduct, getCommentProduct, createCommentProduct, getProductSuggestions } from "../../services/Api";
-import { useParams, useNavigate } from "react-router-dom";
+import { getProduct, getCommentProduct, createCommentProduct } from "../../services/Api";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import CommentForm from "./CommentForm";
 import { getImageProduct } from "../../shared/ultils";
-import { formatPrice } from "../../shared/components/Product-item";
+import { cleanProductDetails } from "../../shared/ultils/productText";
+import PriceTag from "../../shared/components/PriceTag";
+import { getPricing, formatMoney } from "../../shared/ultils/pricing";
+import FrequentlyBoughtTogether from "../../shared/components/FrequentlyBoughtTogether";
 
 const ProductDetails = () => {
   const params = useParams();
   const id = params.id;
   const [product, setProduct] = useState(null);
   const [comments, setComments] = useState([]);
-  const [suggestions, setSuggestions] = useState([]);
   const [inputComment, setInputComment] = useState({});
-  const [showOutOfStockMessage, setShowOutOfStockMessage] = useState(false);
+  const [commentError, setCommentError] = useState("");
+  const [cartMessage, setCartMessage] = useState("");
+  const { isLoggedIn, user } = useSelector(({ Auth }) => Auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const formattedPrice = formatPrice(product?.price);
+  const pricing = getPricing(product);
 
   const [showPlusOne, setShowPlusOne] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = 4;
 
   useEffect(() => {
-    // Fetch product details, comments, and suggestions when component mounts
+    // Fetch product details and comments when component mounts.
+    // Gợi ý mua kèm do <FrequentlyBoughtTogether> tự tải.
+    setCartMessage("");
     getProduct(id).then(({ data }) => {
       setProduct(data.data);
       // Smooth scroll to 200px offset with duration 1000ms
@@ -205,9 +210,6 @@ const ProductDetails = () => {
     });
 
     getComment(id);
-    getProductSuggestions(id).then(({ data }) => {
-      setSuggestions(data.data);
-    });
   }, [id]);
 
   const getComment = (id) => {
@@ -218,15 +220,20 @@ const ProductDetails = () => {
 
   const addToCart = (type) => {
     if (product) {
-      const { _id, name, price, image } = product;
+      const { _id, name, image } = product;
 
-      if (product.is_stock) {
+      if (product.is_stock === false) {
+        setCartMessage("Sản phẩm đã hết hàng.");
+      } else if (pricing.price === null) {
+        setCartMessage("Sản phẩm chưa có giá bán. Vui lòng liên hệ cửa hàng.");
+      } else {
+        // Giá trong giỏ chỉ để hiển thị; khi đặt hàng backend tính lại từ database.
         dispatch({
           type: ADD_TO_CART,
           payload: {
             _id,
             name,
-            price,
+            price: pricing.price,
             image,
             qty: 1,
           },
@@ -241,20 +248,26 @@ const ProductDetails = () => {
         if (type === "buy-now") {
           navigate("/Cart");
         }
-      } else {
-        setShowOutOfStockMessage(true);
       }
     }
   };
 
+  // Chỉ gửi nội dung: tên/email do backend lấy từ tài khoản đang đăng nhập.
   const onClickSubmit = (e) => {
     e.preventDefault();
-    createCommentProduct(id, inputComment, {}).then(({ data }) => {
-      if (data.status === "success") {
-        setInputComment({});
-      }
-      getComment(id);
-    });
+    setCommentError("");
+    createCommentProduct(id, { content: inputComment.content || "" }, {})
+      .then(({ data }) => {
+        if (data.status === "success") {
+          setInputComment({});
+        }
+        getComment(id);
+      })
+      .catch((err) => {
+        const status = err.response && err.response.status;
+        if (status === 401) setCommentError("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại để bình luận.");
+        else setCommentError((err.response && err.response.data && err.response.data.message) || "Không gửi được bình luận. Vui lòng thử lại.");
+      });
   };
 
   const onChangeInput = (e) => {
@@ -284,23 +297,11 @@ const ProductDetails = () => {
     requestAnimationFrame(scroll);
   };
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentIndex + itemsPerPage < suggestions.length) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
   return (
     <div className="container">
-      {showOutOfStockMessage && (
+      {cartMessage && (
         <div className="alert alert-warning mt-3" role="alert">
-          Sản phẩm đã hết hàng.
+          {cartMessage}
         </div>
       )}
 
@@ -316,18 +317,22 @@ const ProductDetails = () => {
                 <li><span>Bảo hành:</span> 12 Tháng</li>
                 <li><span>Đi kèm:</span> {product.accessories}</li>
                 <li><span>Tình trạng:</span> {product.status}</li>
-                <li><span>Khuyến Mại:</span> {product.promotion}đ</li>
+                {pricing.hasDiscount ? (
+                  <li><span>Khuyến Mại:</span> Giảm {formatMoney(pricing.original - pricing.price)}đ</li>
+                ) : pricing.promotionText ? (
+                  <li><span>Khuyến Mại:</span> {pricing.promotionText}</li>
+                ) : null}
                 <li id="price">Giá Bán (chưa bao gồm VAT)</li>
-                <li id="price-number">{formattedPrice}đ</li>
-                <li id="status" style={{ color: product.is_stock ? "green" : "red" }}>
-                  {product.is_stock ? "Còn hàng" : "Hết hàng"}
+                <li id="price-number"><PriceTag product={product} size="lg" label="" /></li>
+                <li id="status" style={{ color: product.is_stock !== false ? "green" : "red" }}>
+                  {product.is_stock !== false ? "Còn hàng" : "Hết hàng"}
                 </li>
               </ul>
               <div id="add-cart">
-                <button onClick={() => addToCart("buy-now")} className="btn btn-warning mr-2">
+                <button onClick={() => addToCart("buy-now")} className="btn btn-warning mr-2" disabled={product.is_stock === false}>
                   Mua ngay
                 </button>
-                <button onClick={() => addToCart()} className="btn btn-info">
+                <button onClick={() => addToCart()} className="btn btn-info" disabled={product.is_stock === false}>
                   Thêm vào giỏ hàng
                 </button>
                 {showPlusOne && <div className="plus-one">+1</div>}
@@ -338,53 +343,24 @@ const ProductDetails = () => {
           <div id="product-body" className="row">
             <div className="col-lg-12 col-md-12 col-sm-12">
               <h3>{product.name}</h3>
-              {product.details}
+              {cleanProductDetails(product.details)}
             </div>
           </div>
 
-          <div id="suggestions" className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12">
-              <h3>Gợi ý sản phẩm</h3>
-              <div className="row">
-                {suggestions.slice(currentIndex, currentIndex + itemsPerPage).map((item, index) => (
-                  <div className="col-lg-3 col-md-3 col-sm-6" key={item._id}>
-                    <div className="product-item card text-center" style={{ height: '312px' }}>
-                      <a onClick={() => navigate(`/ProductDetails-${item._id}`)}><img src={getImageProduct(item.image)} alt={item.name} /></a>
-                      <h4><a onClick={() => navigate(`/product/${item._id}`)}>{item.name}</a></h4>
-                      <p>Giá Bán: <span>{formatPrice(item.price)}đ</span></p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {suggestions.length > itemsPerPage && (
-                <div className="arrow-buttons">
-                  {currentIndex > 0 && <span className="arrow left" onClick={handlePrevious}>&lt;</span>}
-                  {currentIndex + itemsPerPage < suggestions.length && <span className="arrow right" onClick={handleNext}>&gt;</span>}
-                </div>
-              )}
-            </div>
-          </div>
+          <FrequentlyBoughtTogether productId={id} />
 
           <div id="comment" className="row">
             <div className="col-lg-12 col-md-12 col-sm-12">
               <h3>Bình luận sản phẩm</h3>
-              <form method="post">
-                <div className="form-group">
-                  <label>Tên:</label>
-                  <input onChange={onChangeInput} name="name" required type="text" className="form-control" value={inputComment.name || ""} />
-                </div>
-                <div className="form-group">
-                  <label>Email:</label>
-                  <input onChange={onChangeInput} name="email" required type="email" className="form-control" value={inputComment.email || ""} />
-                </div>
-                <div className="form-group">
-                  <label>Nội dung:</label>
-                  <textarea onChange={onChangeInput} name="content" required rows={8} className="form-control" value={inputComment.content || ""} />
-                </div>
-                <button type="submit" onClick={onClickSubmit} name="sbm" className="btn btn-primary">
-                  Gửi
-                </button>
-              </form>
+              <CommentForm
+                isLoggedIn={isLoggedIn}
+                user={user}
+                content={inputComment.content || ""}
+                error={commentError}
+                onChange={onChangeInput}
+                onSubmit={onClickSubmit}
+                LinkComponent={Link}
+              />
             </div>
           </div>
 

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Tai nghe có dây Sony EX15">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#581c87"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs>
+  <rect width="600" height="600" rx="36" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round">
+  <circle cx="245" cy="205" r="42"/><path d="M262 243 L280 350"/>
+  <circle cx="355" cy="205" r="42"/><path d="M338 243 L320 350"/></g>
+  <g fill="#fff" font-family="Segoe UI, Roboto, Arial, sans-serif">
+  <text x="300" y="452" text-anchor="middle" font-size="32" font-weight="700">Tai nghe có dây Sony</text>
+  <text x="300" y="490" text-anchor="middle" font-size="32" font-weight="700">EX15</text>
+  <text x="300" y="542" text-anchor="middle" font-size="20" opacity=".75">Tai nghe · Ảnh minh họa</text>
+  </g>
+</svg>

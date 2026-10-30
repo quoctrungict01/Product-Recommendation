@@ -28,7 +28,8 @@ section{
     align-items: center;
 
 }
-h2{
+/* Chỉ áp cho form Đăng nhập/Đăng ký: file CSS này được nạp ở mọi trang. */
+.form-box h2{
     font-size: 2em;
     color: #fff;
     text-align: center;

@@ -1,35 +1,49 @@
 import React from "react";
-import { UPDATE_CART, DELETE_ITEM_CART } from "../../shared/constants/action-type";
+import { UPDATE_CART, DELETE_ITEM_CART, REFRESH_CART_ITEMS, CLEAR_CART } from "../../shared/constants/action-type";
 import { useSelector, useDispatch } from "react-redux";
 import { getImageProduct } from "../../shared/ultils";
 import { useNavigate } from "react-router-dom";
-import { order } from "../../services/Api";
+import CheckoutForm from "./CheckoutForm";
+import { getProduct } from "../../services/Api";
+import { getPricing } from "../../shared/ultils/pricing";
 
 
 const Cart = () => {
-    const [inputs, setInputs] = React.useState({});
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const carts = useSelector(({ Cart }) => {
         return Cart.items;
     });
-    const onClickOrder = (e)=>{
-        e.preventDefault();
-        const items = carts.map((cart)=>({prd_id: cart._id, price: cart.price, qty: cart.qty}));
-        order({
-            items,
-            ...inputs
-        }).then(({data})=>{
-            if(data.status === "success"){
-                return navigate("/Success");
-            }
+    // Giỏ lưu trong trình duyệt có thể có giá cũ: lấy lại giá bán sau ưu đãi và tình trạng hàng từ backend khi mở trang.
+    // (Khi đặt hàng backend vẫn tính lại giá từ database — đây chỉ để hiển thị đúng.)
+    const cartIds = (carts || []).map((c) => c._id).join(",");
+    React.useEffect(() => {
+        if (!cartIds) return undefined;
+        let alive = true;
+        Promise.allSettled(cartIds.split(",").map((id) => getProduct(id))).then((results) => {
+            if (!alive) return;
+            const items = results
+                .filter((r) => r.status === "fulfilled" && r.value && r.value.data && r.value.data.data)
+                .map((r) => {
+                    const p = r.value.data.data;
+                    const { price } = getPricing(p);
+                    return price === null ? null : { _id: p._id, price, is_stock: p.is_stock !== false, name: p.name, image: p.image };
+                })
+                .filter(Boolean);
+            if (items.length) dispatch({ type: REFRESH_CART_ITEMS, payload: { items } });
         });
-    }
-    const onChangeInput = (e)=>{
-        const {name, value} = e.target;
-        setInputs({...inputs, [name]: value});
-        console.log(inputs);
-    }
+        return () => {
+            alive = false;
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [cartIds]);
+    const soldOut = (carts || []).filter((c) => c.is_stock === false);
+    // Giá cuối cùng do backend tính từ dữ liệu sản phẩm; khách không cần đăng nhập.
+    // Chỉ gọi khi backend đã trả "success" (xem CheckoutForm). Lỗi -> giỏ được giữ nguyên để sửa và thử lại.
+    const onOrderSuccess = (data) => {
+        dispatch({ type: CLEAR_CART });
+        navigate("/Success", { state: { orderId: data._id, totalPrice: data.totalPrice } });
+    };
     const deleteItemCart = (e, _id)=>{
         e.preventDefault();
         // eslint-disable-next-line no-restricted-globals
@@ -89,10 +103,11 @@ const Cart = () => {
                     <form method="post">
                         {
                             carts?.map((cart) =>
-                                <div className="cart-item row">
+                                <div className="cart-item row" key={cart._id}>
                                     <div className="cart-thumb col-lg-7 col-md-7 col-sm-12">
-                                        <img src={getImageProduct(cart.image)} />
+                                        <img src={getImageProduct(cart.image)} alt={cart.name} />
                                         <h4>{cart.name}</h4>
+                                        {cart.is_stock === false ? <p className="text-danger" style={{ fontSize: 14 }}>Hết hàng — vui lòng xóa khỏi giỏ để đặt hàng.</p> : null}
                                     </div>
                                     <div className="cart-quantity col-lg-2 col-md-2 col-sm-12">
                                         <input onChange={(e) => updateCart(e, cart._id)} type="number" id="quantity" className="form-control form-blue quantity" value={cart.qty} />
@@ -111,39 +126,13 @@ const Cart = () => {
                     </form>
                 </div>
                 {/*	End Cart	*/}
-                {/*	Customer Info	*/}
-                <div id="customer">
-                    <form method="post">
-                        <div className="row">
-                            <div onChange={onChangeInput} value={inputs?.fullName} id="customer-name" className="col-lg-4 col-md-4 col-sm-12">
-                                <input placeholder="Họ và tên (bắt buộc)" type="text" name="fullName" className="form-control" required />
-                            </div>
-                            <div onChange={onChangeInput} value={inputs?.phone} id="customer-phone" className="col-lg-4 col-md-4 col-sm-12">
-                                <input placeholder="Số điện thoại (bắt buộc)" type="text" name="phone" className="form-control" required />
-                            </div>
-                            <div onChange={onChangeInput} value={inputs?.email} id="customer-mail" className="col-lg-4 col-md-4 col-sm-12">
-                                <input placeholder="Email (bắt buộc)" type="text" name="email" className="form-control" required />
-                            </div>
-                            <div onChange={onChangeInput} value={inputs?.address} id="customer-add" className="col-lg-12 col-md-12 col-sm-12">
-                                <input placeholder="Địa chỉ nhà riêng hoặc cơ quan (bắt buộc)" type="text" name="address" className="form-control" required />
-                            </div>
-                        </div>
-                    </form>
-                    <div className="row">
-                        <div className="by-now col-lg-6 col-md-6 col-sm-12">
-                            <a onClick={onClickOrder} href="#">
-                                <b>Mua ngay</b>
-                                <span>Giao hàng tận nơi siêu tốc</span>
-                            </a>
-                        </div>
-                        <div className="by-now col-lg-6 col-md-6 col-sm-12">
-                            <a href="#">
-                                <b>Trả góp Online</b>
-                                <span>Vui lòng call (+84) 0988 550 553</span>
-                            </a>
-                        </div>
+                {soldOut.length ? (
+                    <div className="alert alert-warning" role="alert">
+                        Có {soldOut.length} sản phẩm đã hết hàng trong giỏ: {soldOut.map((c) => c.name).join(", ")}. Đơn hàng sẽ không được nhận cho đến khi bạn xóa các sản phẩm này.
                     </div>
-                </div>
+                ) : null}
+                {/*	Customer Info	*/}
+                <CheckoutForm carts={carts} onSuccess={onOrderSuccess} />
                 {/*	End Customer Info	*/}
             </div>
 

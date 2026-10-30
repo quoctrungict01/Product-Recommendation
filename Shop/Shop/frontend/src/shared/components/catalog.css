@@ -1,0 +1,61 @@
+/* Giá, thẻ sản phẩm, bộ lọc và lưới sản phẩm (tìm kiếm / danh mục). Màu theo TrungShop: đỏ #EB1F27. */
+
+.price-tag { margin: 4px 0; line-height: 1.5; }
+.product-item .price-tag span.price-tag-label { color: #333; font-weight: normal; }
+.price-tag-final { color: #EB1F27; font-weight: bold; }
+.price-tag-original { color: #888; font-size: 0.85em; white-space: nowrap; }
+.price-tag-percent {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #fff;
+    background: #EB1F27;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+.price-tag-contact { color: #555; }
+.price-tag-lg .price-tag-final { font-size: 26px; }
+.price-tag-lg .price-tag-original { font-size: 16px; }
+
+.product-item { position: relative; }
+.product-item-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #555;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 1px 7px;
+    z-index: 1;
+}
+.product-item-badge.sale { background: #EB1F27; left: auto; right: 8px; }
+.product-item.out-of-stock img { opacity: 0.45; }
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    margin-top: 10px;
+}
+.catalog-grid .product-item { margin: 0 !important; }
+.catalog-grid .product-item img { max-width: 100%; object-fit: contain; }
+@media (max-width: 767px) { .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 400px) { .catalog-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.catalog-filters {
+    background: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.catalog-filters .row > div { margin-bottom: 8px; }
+.catalog-filters label { font-size: 13px; color: #555; margin-bottom: 2px; display: block; }
+.catalog-filters .form-check-label { display: inline; }
+.catalog-filter-error { color: #c60a11; font-size: 13px; }
+.catalog-summary { color: #555; font-size: 14px; margin: 8px 0 0; }
+.catalog-state { text-align: center; padding: 30px 10px; color: #555; }
+.catalog-state .btn { margin-top: 10px; }

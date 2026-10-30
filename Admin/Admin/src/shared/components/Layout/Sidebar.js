@@ -1,34 +1,37 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
+
+// Menu quản trị: điều hướng trong ứng dụng (không tải lại trang) và đánh dấu mục đang mở.
+const ITEMS = [
+    { to: "/", icon: "dashboard-dial", label: "Dashboard" },
+    { to: "/user", icon: "male-user", label: "Quản lý thành viên" },
+    { to: "/category", icon: "open-folder", label: "Quản lý danh mục" },
+    { to: "/product", icon: "bag", label: "Quản lý sản phẩm" },
+    { to: "/comment", icon: "two-messages", label: "Quản lý bình luận" },
+    { to: "/order", icon: "chain", label: "Quản lý đơn hàng" },
+    { to: "/coupon", icon: "tag", label: "Mã giảm giá" },
+];
+
+const isActive = (pathname, to) => (to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`) || pathname.startsWith(`${to}-`));
 
 const Sidebar = () => {
+    const { pathname } = useLocation();
     return (
-        <>
-            <div id="sidebar-collapse" className="col-sm-3 col-lg-2 sidebar">
-                    <form role="search">
-                        <div className="form-group">
-                            <input type="text" className="form-control" placeholder="Search" />
-                        </div>
-                    </form>
-                    <ul className="nav menu">
-                        <li><a href="/"><svg className="glyph stroked dashboard-dial"><use xlinkHref="#stroked-dashboard-dial" /></svg> Dashboard</a></li>
-                        <li><a href="/user"><svg className="glyph stroked male user "><use xlinkHref="#stroked-male-user" /></svg>Quản lý thành viên</a></li>
-                        <li><a href="/category"><svg className="glyph stroked open folder"><use xlinkHref="#stroked-open-folder" /></svg>Quản lý danh mục</a></li>
-                        <li><a href="/product"><svg className="glyph stroked bag"><use xlinkHref="#stroked-bag" /></svg>Quản lý sản phẩm</a></li>
-                        <li><a href="/comment"><svg className="glyph stroked two messages"><use xlinkHref="#stroked-two-messages" /></svg> Quản lý bình luận</a></li>
-                        <li><a href="/order"><svg className="glyph stroked chain"><use xlinkHref="#stroked-chain" /></svg> Quản lý đơn hàng</a></li>
-                        <li><a href="setting.html"><svg className="glyph stroked gear"><use xlinkHref="#stroked-gear" /></svg> Cấu hình</a></li>
-                    </ul>
-                </div>{/*/.sidebar*/}
-            
-        </>
-    )
-}
+        <div id="sidebar-collapse" className="col-sm-3 col-lg-2 sidebar">
+            <ul className="nav menu">
+                {ITEMS.map((item) => (
+                    <li key={item.to} className={isActive(pathname, item.to) ? "active" : ""}>
+                        <Link to={item.to} aria-current={isActive(pathname, item.to) ? "page" : undefined}>
+                            <svg className={`glyph stroked ${item.icon}`}>
+                                <use xlinkHref={`#stroked-${item.icon}`} />
+                            </svg>{" "}
+                            {item.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
 export default Sidebar;
-
-
-
-
-
-
-
-

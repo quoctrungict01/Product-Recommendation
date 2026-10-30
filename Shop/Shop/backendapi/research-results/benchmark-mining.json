@@ -1,0 +1,1286 @@
+[
+  {
+    "scenario": {
+      "group": "A. Thay đổi min_sup (N = 10.000, giỏ TB 4)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 10000
+      },
+      "minSupport": 0.05
+    },
+    "apriori": {
+      "itemsets": 30,
+      "maxLength": 3,
+      "byLength": {
+        "1": 16,
+        "2": 13,
+        "3": 1
+      },
+      "checksum": "199267bb3930f612c1f121fcee1a22be9e43003e",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 10000,
+        "minSupportCount": 500,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 16
+          },
+          {
+            "k": 2,
+            "joined": 120,
+            "candidates": 120,
+            "frequent": 13
+          },
+          {
+            "k": 3,
+            "joined": 39,
+            "candidates": 5,
+            "frequent": 1
+          },
+          {
+            "k": 4,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 125
+      },
+      "coldMs": 23.6267,
+      "medianMs": 17.3429,
+      "minMs": 15.1704,
+      "peakRssDeltaMB": 4.55078125,
+      "heapRetainedMB": 0.06954193115234375,
+      "avgBasket": 4.4209
+    },
+    "fpgrowth": {
+      "itemsets": 30,
+      "maxLength": 3,
+      "byLength": {
+        "1": 16,
+        "2": 13,
+        "3": 1
+      },
+      "checksum": "199267bb3930f612c1f121fcee1a22be9e43003e",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 10000,
+        "minSupportCount": 500,
+        "treeNodes": 1806,
+        "conditionalTrees": 23,
+        "singlePathShortcuts": 7,
+        "maxDepth": 2
+      },
+      "coldMs": 19.1958,
+      "medianMs": 15.6874,
+      "minMs": 13.6503,
+      "peakRssDeltaMB": 7.21875,
+      "heapRetainedMB": 0.07166290283203125,
+      "avgBasket": 4.4209
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "A. Thay đổi min_sup (N = 10.000, giỏ TB 4)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 10000
+      },
+      "minSupport": 0.02
+    },
+    "apriori": {
+      "itemsets": 114,
+      "maxLength": 3,
+      "byLength": {
+        "1": 45,
+        "2": 54,
+        "3": 15
+      },
+      "checksum": "bcc6c43eee364c04c37be7ac309a9b82524a9ce8",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 10000,
+        "minSupportCount": 200,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 45
+          },
+          {
+            "k": 2,
+            "joined": 990,
+            "candidates": 990,
+            "frequent": 54
+          },
+          {
+            "k": 3,
+            "joined": 359,
+            "candidates": 60,
+            "frequent": 15
+          },
+          {
+            "k": 4,
+            "joined": 26,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 1050
+      },
+      "coldMs": 34.9245,
+      "medianMs": 24.3108,
+      "minMs": 23.637,
+      "peakRssDeltaMB": 4.04296875,
+      "heapRetainedMB": 0.09209442138671875,
+      "avgBasket": 4.4209
+    },
+    "fpgrowth": {
+      "itemsets": 114,
+      "maxLength": 3,
+      "byLength": {
+        "1": 45,
+        "2": 54,
+        "3": 15
+      },
+      "checksum": "bcc6c43eee364c04c37be7ac309a9b82524a9ce8",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 10000,
+        "minSupportCount": 200,
+        "treeNodes": 7685,
+        "conditionalTrees": 89,
+        "singlePathShortcuts": 25,
+        "maxDepth": 2
+      },
+      "coldMs": 28.9731,
+      "medianMs": 27.1297,
+      "minMs": 24.5141,
+      "peakRssDeltaMB": 13.23046875,
+      "heapRetainedMB": 0.08990478515625,
+      "avgBasket": 4.4209
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "A. Thay đổi min_sup (N = 10.000, giỏ TB 4)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 10000
+      },
+      "minSupport": 0.01
+    },
+    "apriori": {
+      "itemsets": 337,
+      "maxLength": 5,
+      "byLength": {
+        "1": 78,
+        "2": 150,
+        "3": 86,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "e361550a997a77442e0d5d04ea2425d17074b962",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 10000,
+        "minSupportCount": 100,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 78
+          },
+          {
+            "k": 2,
+            "joined": 3003,
+            "candidates": 3003,
+            "frequent": 150
+          },
+          {
+            "k": 3,
+            "joined": 1771,
+            "candidates": 260,
+            "frequent": 86
+          },
+          {
+            "k": 4,
+            "joined": 221,
+            "candidates": 31,
+            "frequent": 20
+          },
+          {
+            "k": 5,
+            "joined": 3,
+            "candidates": 3,
+            "frequent": 3
+          },
+          {
+            "k": 6,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 3297
+      },
+      "coldMs": 46.3587,
+      "medianMs": 35.004,
+      "minMs": 33.1703,
+      "peakRssDeltaMB": 13.03515625,
+      "heapRetainedMB": 0.18480682373046875,
+      "avgBasket": 4.4209
+    },
+    "fpgrowth": {
+      "itemsets": 337,
+      "maxLength": 5,
+      "byLength": {
+        "1": 78,
+        "2": 150,
+        "3": 86,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "e361550a997a77442e0d5d04ea2425d17074b962",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 10000,
+        "minSupportCount": 100,
+        "treeNodes": 11803,
+        "conditionalTrees": 271,
+        "singlePathShortcuts": 66,
+        "maxDepth": 4
+      },
+      "coldMs": 47.9412,
+      "medianMs": 38.1663,
+      "minMs": 32.1189,
+      "peakRssDeltaMB": 15.58203125,
+      "heapRetainedMB": 0.17364501953125,
+      "avgBasket": 4.4209
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "A. Thay đổi min_sup (N = 10.000, giỏ TB 4)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 10000
+      },
+      "minSupport": 0.005
+    },
+    "apriori": {
+      "itemsets": 699,
+      "maxLength": 6,
+      "byLength": {
+        "1": 142,
+        "2": 293,
+        "3": 195,
+        "4": 58,
+        "5": 10,
+        "6": 1
+      },
+      "checksum": "027f9b0359845ec0c16b5a7c2d3005e6f2bad778",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 10000,
+        "minSupportCount": 50,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 142
+          },
+          {
+            "k": 2,
+            "joined": 10011,
+            "candidates": 10011,
+            "frequent": 293
+          },
+          {
+            "k": 3,
+            "joined": 6567,
+            "candidates": 680,
+            "frequent": 195
+          },
+          {
+            "k": 4,
+            "joined": 1100,
+            "candidates": 100,
+            "frequent": 58
+          },
+          {
+            "k": 5,
+            "joined": 52,
+            "candidates": 12,
+            "frequent": 10
+          },
+          {
+            "k": 6,
+            "joined": 1,
+            "candidates": 1,
+            "frequent": 1
+          },
+          {
+            "k": 7,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 10804
+      },
+      "coldMs": 75.9052,
+      "medianMs": 59.4653,
+      "minMs": 57.2992,
+      "peakRssDeltaMB": 16.5546875,
+      "heapRetainedMB": 0.28446197509765625,
+      "avgBasket": 4.4209
+    },
+    "fpgrowth": {
+      "itemsets": 699,
+      "maxLength": 6,
+      "byLength": {
+        "1": 142,
+        "2": 293,
+        "3": 195,
+        "4": 58,
+        "5": 10,
+        "6": 1
+      },
+      "checksum": "027f9b0359845ec0c16b5a7c2d3005e6f2bad778",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 10000,
+        "minSupportCount": 50,
+        "treeNodes": 16132,
+        "conditionalTrees": 545,
+        "singlePathShortcuts": 154,
+        "maxDepth": 5
+      },
+      "coldMs": 67.8694,
+      "medianMs": 43.6878,
+      "minMs": 35.088,
+      "peakRssDeltaMB": 16.53515625,
+      "heapRetainedMB": 0.21802520751953125,
+      "avgBasket": 4.4209
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "A. Thay đổi min_sup (N = 10.000, giỏ TB 4)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 10000
+      },
+      "minSupport": 0.0025
+    },
+    "apriori": {
+      "itemsets": 1579,
+      "maxLength": 6,
+      "byLength": {
+        "1": 200,
+        "2": 642,
+        "3": 504,
+        "4": 188,
+        "5": 40,
+        "6": 5
+      },
+      "checksum": "79738fdf2613db0e4552360db56813db4a5d1cf8",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 10000,
+        "minSupportCount": 25,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 200
+          },
+          {
+            "k": 2,
+            "joined": 19900,
+            "candidates": 19900,
+            "frequent": 642
+          },
+          {
+            "k": 3,
+            "joined": 24303,
+            "candidates": 2225,
+            "frequent": 504
+          },
+          {
+            "k": 4,
+            "joined": 5266,
+            "candidates": 403,
+            "frequent": 188
+          },
+          {
+            "k": 5,
+            "joined": 421,
+            "candidates": 51,
+            "frequent": 40
+          },
+          {
+            "k": 6,
+            "joined": 6,
+            "candidates": 6,
+            "frequent": 5
+          },
+          {
+            "k": 7,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 22585
+      },
+      "coldMs": 93.8876,
+      "medianMs": 79.6277,
+      "minMs": 74.0201,
+      "peakRssDeltaMB": 33.96875,
+      "heapRetainedMB": 0.47406768798828125,
+      "avgBasket": 4.4209
+    },
+    "fpgrowth": {
+      "itemsets": 1579,
+      "maxLength": 6,
+      "byLength": {
+        "1": 200,
+        "2": 642,
+        "3": 504,
+        "4": 188,
+        "5": 40,
+        "6": 5
+      },
+      "checksum": "79738fdf2613db0e4552360db56813db4a5d1cf8",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 10000,
+        "minSupportCount": 25,
+        "treeNodes": 18395,
+        "conditionalTrees": 1235,
+        "singlePathShortcuts": 340,
+        "maxDepth": 5
+      },
+      "coldMs": 52.5002,
+      "medianMs": 46.2602,
+      "minMs": 36.9943,
+      "peakRssDeltaMB": 20.6015625,
+      "heapRetainedMB": 0.47193145751953125,
+      "avgBasket": 4.4209
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "B. Thay đổi số giao dịch (min_sup = 1%)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 1000
+      },
+      "minSupport": 0.01
+    },
+    "apriori": {
+      "itemsets": 377,
+      "maxLength": 5,
+      "byLength": {
+        "1": 88,
+        "2": 155,
+        "3": 106,
+        "4": 25,
+        "5": 3
+      },
+      "checksum": "b1032ca4a695a360557d6a66e18ce8e42e46fda7",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 1000,
+        "minSupportCount": 10,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 88
+          },
+          {
+            "k": 2,
+            "joined": 3828,
+            "candidates": 3828,
+            "frequent": 155
+          },
+          {
+            "k": 3,
+            "joined": 1919,
+            "candidates": 251,
+            "frequent": 106
+          },
+          {
+            "k": 4,
+            "joined": 384,
+            "candidates": 38,
+            "frequent": 25
+          },
+          {
+            "k": 5,
+            "joined": 5,
+            "candidates": 3,
+            "frequent": 3
+          },
+          {
+            "k": 6,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 4120
+      },
+      "coldMs": 13.5052,
+      "medianMs": 8.0889,
+      "minMs": 7.7407,
+      "peakRssDeltaMB": 6.109375,
+      "heapRetainedMB": 0.1655731201171875,
+      "avgBasket": 4.436
+    },
+    "fpgrowth": {
+      "itemsets": 377,
+      "maxLength": 5,
+      "byLength": {
+        "1": 88,
+        "2": 155,
+        "3": 106,
+        "4": 25,
+        "5": 3
+      },
+      "checksum": "b1032ca4a695a360557d6a66e18ce8e42e46fda7",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 1000,
+        "minSupportCount": 10,
+        "treeNodes": 1842,
+        "conditionalTrees": 274,
+        "singlePathShortcuts": 81,
+        "maxDepth": 4
+      },
+      "coldMs": 12.7637,
+      "medianMs": 7.5513,
+      "minMs": 6.0155,
+      "peakRssDeltaMB": 3.16015625,
+      "heapRetainedMB": 0.14534759521484375,
+      "avgBasket": 4.436
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "B. Thay đổi số giao dịch (min_sup = 1%)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 5000
+      },
+      "minSupport": 0.01
+    },
+    "apriori": {
+      "itemsets": 332,
+      "maxLength": 5,
+      "byLength": {
+        "1": 81,
+        "2": 145,
+        "3": 83,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "8ec28f76cd81b8e15d67499bdc76af073eb380e9",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 5000,
+        "minSupportCount": 50,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 81
+          },
+          {
+            "k": 2,
+            "joined": 3240,
+            "candidates": 3240,
+            "frequent": 145
+          },
+          {
+            "k": 3,
+            "joined": 1708,
+            "candidates": 236,
+            "frequent": 83
+          },
+          {
+            "k": 4,
+            "joined": 230,
+            "candidates": 27,
+            "frequent": 20
+          },
+          {
+            "k": 5,
+            "joined": 3,
+            "candidates": 3,
+            "frequent": 3
+          },
+          {
+            "k": 6,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 3506
+      },
+      "coldMs": 28.4679,
+      "medianMs": 20.0472,
+      "minMs": 19.3899,
+      "peakRssDeltaMB": 6.64453125,
+      "heapRetainedMB": 0.16025543212890625,
+      "avgBasket": 4.4166
+    },
+    "fpgrowth": {
+      "itemsets": 332,
+      "maxLength": 5,
+      "byLength": {
+        "1": 81,
+        "2": 145,
+        "3": 83,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "8ec28f76cd81b8e15d67499bdc76af073eb380e9",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 5000,
+        "minSupportCount": 50,
+        "treeNodes": 6797,
+        "conditionalTrees": 260,
+        "singlePathShortcuts": 72,
+        "maxDepth": 4
+      },
+      "coldMs": 21.2919,
+      "medianMs": 14.3994,
+      "minMs": 13.7113,
+      "peakRssDeltaMB": 9.0234375,
+      "heapRetainedMB": 0.12895965576171875,
+      "avgBasket": 4.4166
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "B. Thay đổi số giao dịch (min_sup = 1%)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 20000
+      },
+      "minSupport": 0.01
+    },
+    "apriori": {
+      "itemsets": 338,
+      "maxLength": 5,
+      "byLength": {
+        "1": 79,
+        "2": 147,
+        "3": 89,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "ebb067e215e4dc5abddf0d9fa1a92796c33d5e0d",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 20000,
+        "minSupportCount": 200,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 79
+          },
+          {
+            "k": 2,
+            "joined": 3081,
+            "candidates": 3081,
+            "frequent": 147
+          },
+          {
+            "k": 3,
+            "joined": 1738,
+            "candidates": 248,
+            "frequent": 89
+          },
+          {
+            "k": 4,
+            "joined": 248,
+            "candidates": 31,
+            "frequent": 20
+          },
+          {
+            "k": 5,
+            "joined": 3,
+            "candidates": 3,
+            "frequent": 3
+          },
+          {
+            "k": 6,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 3363
+      },
+      "coldMs": 80.9482,
+      "medianMs": 72.0251,
+      "minMs": 66.861,
+      "peakRssDeltaMB": 11.796875,
+      "heapRetainedMB": 0.16146087646484375,
+      "avgBasket": 4.4374
+    },
+    "fpgrowth": {
+      "itemsets": 338,
+      "maxLength": 5,
+      "byLength": {
+        "1": 79,
+        "2": 147,
+        "3": 89,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "ebb067e215e4dc5abddf0d9fa1a92796c33d5e0d",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 20000,
+        "minSupportCount": 200,
+        "treeNodes": 21290,
+        "conditionalTrees": 269,
+        "singlePathShortcuts": 69,
+        "maxDepth": 4
+      },
+      "coldMs": 59.3091,
+      "medianMs": 49.1464,
+      "minMs": 46.3168,
+      "peakRssDeltaMB": 34.19921875,
+      "heapRetainedMB": 0.136932373046875,
+      "avgBasket": 4.4374
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "B. Thay đổi số giao dịch (min_sup = 1%)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 200,
+        "avgBasketSize": 4,
+        "patternCount": 15,
+        "patternSize": [
+          2,
+          5
+        ],
+        "transactionCount": 50000
+      },
+      "minSupport": 0.01
+    },
+    "apriori": {
+      "itemsets": 335,
+      "maxLength": 5,
+      "byLength": {
+        "1": 78,
+        "2": 146,
+        "3": 88,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "45b2af5498db4b5e756711d9e55e5cfceb548e23",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 50000,
+        "minSupportCount": 500,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 78
+          },
+          {
+            "k": 2,
+            "joined": 3003,
+            "candidates": 3003,
+            "frequent": 146
+          },
+          {
+            "k": 3,
+            "joined": 1718,
+            "candidates": 246,
+            "frequent": 88
+          },
+          {
+            "k": 4,
+            "joined": 235,
+            "candidates": 32,
+            "frequent": 20
+          },
+          {
+            "k": 5,
+            "joined": 3,
+            "candidates": 3,
+            "frequent": 3
+          },
+          {
+            "k": 6,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 3284
+      },
+      "coldMs": 158.0101,
+      "medianMs": 163.9215,
+      "minMs": 157.4504,
+      "peakRssDeltaMB": 23.08203125,
+      "heapRetainedMB": 0.16088104248046875,
+      "avgBasket": 4.44062
+    },
+    "fpgrowth": {
+      "itemsets": 335,
+      "maxLength": 5,
+      "byLength": {
+        "1": 78,
+        "2": 146,
+        "3": 88,
+        "4": 20,
+        "5": 3
+      },
+      "checksum": "45b2af5498db4b5e756711d9e55e5cfceb548e23",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 50000,
+        "minSupportCount": 500,
+        "treeNodes": 44339,
+        "conditionalTrees": 269,
+        "singlePathShortcuts": 66,
+        "maxDepth": 4
+      },
+      "coldMs": 149.0189,
+      "medianMs": 121.0692,
+      "minMs": 111.6851,
+      "peakRssDeltaMB": 66.8203125,
+      "heapRetainedMB": 0.13646697998046875,
+      "avgBasket": 4.44062
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "C. Dữ liệu dày (N = 5.000, 100 item, giỏ TB 10)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 100,
+        "avgBasketSize": 10,
+        "patternCount": 15,
+        "patternSize": [
+          4,
+          8
+        ],
+        "transactionCount": 5000
+      },
+      "minSupport": 0.05
+    },
+    "apriori": {
+      "itemsets": 329,
+      "maxLength": 5,
+      "byLength": {
+        "1": 48,
+        "2": 122,
+        "3": 115,
+        "4": 41,
+        "5": 3
+      },
+      "checksum": "30f6f1af76d72376938b7dfa726d00e0a5e59054",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 5000,
+        "minSupportCount": 250,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 48
+          },
+          {
+            "k": 2,
+            "joined": 1128,
+            "candidates": 1128,
+            "frequent": 122
+          },
+          {
+            "k": 3,
+            "joined": 1492,
+            "candidates": 218,
+            "frequent": 115
+          },
+          {
+            "k": 4,
+            "joined": 625,
+            "candidates": 61,
+            "frequent": 41
+          },
+          {
+            "k": 5,
+            "joined": 132,
+            "candidates": 4,
+            "frequent": 3
+          },
+          {
+            "k": 6,
+            "joined": 1,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 1411
+      },
+      "coldMs": 64.3583,
+      "medianMs": 63.6212,
+      "minMs": 60.9968,
+      "peakRssDeltaMB": 6.453125,
+      "heapRetainedMB": 0.16057586669921875,
+      "avgBasket": 9.0276
+    },
+    "fpgrowth": {
+      "itemsets": 329,
+      "maxLength": 5,
+      "byLength": {
+        "1": 48,
+        "2": 122,
+        "3": 115,
+        "4": 41,
+        "5": 3
+      },
+      "checksum": "30f6f1af76d72376938b7dfa726d00e0a5e59054",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 5000,
+        "minSupportCount": 250,
+        "treeNodes": 14510,
+        "conditionalTrees": 234,
+        "singlePathShortcuts": 95,
+        "maxDepth": 4
+      },
+      "coldMs": 37.5265,
+      "medianMs": 33.206,
+      "minMs": 27.8481,
+      "peakRssDeltaMB": 17.9921875,
+      "heapRetainedMB": 0.14554595947265625,
+      "avgBasket": 9.0276
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "C. Dữ liệu dày (N = 5.000, 100 item, giỏ TB 10)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 100,
+        "avgBasketSize": 10,
+        "patternCount": 15,
+        "patternSize": [
+          4,
+          8
+        ],
+        "transactionCount": 5000
+      },
+      "minSupport": 0.03
+    },
+    "apriori": {
+      "itemsets": 807,
+      "maxLength": 6,
+      "byLength": {
+        "1": 75,
+        "2": 265,
+        "3": 298,
+        "4": 145,
+        "5": 23,
+        "6": 1
+      },
+      "checksum": "58e631624e7dd0c2547d25e0999427126886ad27",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 5000,
+        "minSupportCount": 150,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 75
+          },
+          {
+            "k": 2,
+            "joined": 2775,
+            "candidates": 2775,
+            "frequent": 265
+          },
+          {
+            "k": 3,
+            "joined": 5301,
+            "candidates": 666,
+            "frequent": 298
+          },
+          {
+            "k": 4,
+            "joined": 2887,
+            "candidates": 203,
+            "frequent": 145
+          },
+          {
+            "k": 5,
+            "joined": 631,
+            "candidates": 32,
+            "frequent": 23
+          },
+          {
+            "k": 6,
+            "joined": 52,
+            "candidates": 1,
+            "frequent": 1
+          },
+          {
+            "k": 7,
+            "joined": 0,
+            "candidates": 0,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 3677
+      },
+      "coldMs": 118.4759,
+      "medianMs": 115.5112,
+      "minMs": 114.1556,
+      "peakRssDeltaMB": 7.23046875,
+      "heapRetainedMB": 0.28073883056640625,
+      "avgBasket": 9.0276
+    },
+    "fpgrowth": {
+      "itemsets": 807,
+      "maxLength": 6,
+      "byLength": {
+        "1": 75,
+        "2": 265,
+        "3": 298,
+        "4": 145,
+        "5": 23,
+        "6": 1
+      },
+      "checksum": "58e631624e7dd0c2547d25e0999427126886ad27",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 5000,
+        "minSupportCount": 150,
+        "treeNodes": 19754,
+        "conditionalTrees": 593,
+        "singlePathShortcuts": 214,
+        "maxDepth": 5
+      },
+      "coldMs": 50.4255,
+      "medianMs": 44.4058,
+      "minMs": 37.3967,
+      "peakRssDeltaMB": 19.640625,
+      "heapRetainedMB": 0.2470855712890625,
+      "avgBasket": 9.0276
+    },
+    "sameResult": true
+  },
+  {
+    "scenario": {
+      "group": "C. Dữ liệu dày (N = 5.000, 100 item, giỏ TB 10)",
+      "data": {
+        "seed": 20261023,
+        "itemCount": 100,
+        "avgBasketSize": 10,
+        "patternCount": 15,
+        "patternSize": [
+          4,
+          8
+        ],
+        "transactionCount": 5000
+      },
+      "minSupport": 0.02
+    },
+    "apriori": {
+      "itemsets": 1636,
+      "maxLength": 6,
+      "byLength": {
+        "1": 97,
+        "2": 454,
+        "3": 611,
+        "4": 354,
+        "5": 104,
+        "6": 16
+      },
+      "checksum": "78a82cb121bc5a2ac7264edc3344ed4500a7ccf9",
+      "stats": {
+        "algorithm": "apriori",
+        "transactionCount": 5000,
+        "minSupportCount": 100,
+        "levels": [
+          {
+            "k": 1,
+            "joined": null,
+            "candidates": null,
+            "frequent": 97
+          },
+          {
+            "k": 2,
+            "joined": 4656,
+            "candidates": 4656,
+            "frequent": 454
+          },
+          {
+            "k": 3,
+            "joined": 10988,
+            "candidates": 1526,
+            "frequent": 611
+          },
+          {
+            "k": 4,
+            "joined": 8320,
+            "candidates": 497,
+            "frequent": 354
+          },
+          {
+            "k": 5,
+            "joined": 2120,
+            "candidates": 121,
+            "frequent": 104
+          },
+          {
+            "k": 6,
+            "joined": 276,
+            "candidates": 18,
+            "frequent": 16
+          },
+          {
+            "k": 7,
+            "joined": 9,
+            "candidates": 1,
+            "frequent": 0
+          }
+        ],
+        "totalCandidates": 6819
+      },
+      "coldMs": 206.2568,
+      "medianMs": 196.3251,
+      "minMs": 194.2274,
+      "peakRssDeltaMB": 16.390625,
+      "heapRetainedMB": 0.5095901489257812,
+      "avgBasket": 9.0276
+    },
+    "fpgrowth": {
+      "itemsets": 1636,
+      "maxLength": 6,
+      "byLength": {
+        "1": 97,
+        "2": 454,
+        "3": 611,
+        "4": 354,
+        "5": 104,
+        "6": 16
+      },
+      "checksum": "78a82cb121bc5a2ac7264edc3344ed4500a7ccf9",
+      "stats": {
+        "algorithm": "fp-growth",
+        "transactionCount": 5000,
+        "minSupportCount": 100,
+        "treeNodes": 22421,
+        "conditionalTrees": 1202,
+        "singlePathShortcuts": 434,
+        "maxDepth": 5
+      },
+      "coldMs": 63.4449,
+      "medianMs": 60.7151,
+      "minMs": 47.1254,
+      "peakRssDeltaMB": 29.125,
+      "heapRetainedMB": 0.5028305053710938,
+      "avgBasket": 9.0276
+    },
+    "sameResult": true
+  }
+]

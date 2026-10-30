@@ -1,159 +1,54 @@
-// import React, { useState } from 'react';
+// Trang "Thêm danh mục" riêng (link cũ /category-add). Gửi { name } — trước đây gửi cat_name nên luôn lỗi 400.
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { addCategory } from "../../services/Api";
+import { apiMessage } from "../../shared/ultils/format";
+import { categoryNameError } from "./index";
+import PageShell from "../../shared/components/PageShell";
+import Notice from "../../shared/components/Notice";
 
-// const AddCategory = () => {
-//     const [categoryName, setCategoryName] = useState('');
-//     const [errorMessage, setErrorMessage] = useState('');
+const AddCategory = ({ api = { addCategory } }) => {
+    const [name, setName] = useState("");
+    const [notice, setNotice] = useState(null);
+    const [busy, setBusy] = useState(false);
 
-//     const handleSubmit = (event) => {
-//         event.preventDefault();
-//         // Gửi request để thêm danh mục vào hệ thống ở đây
-//         if (categoryName.trim() === '') {
-//             setErrorMessage('Tên danh mục không được để trống!');
-//             return;
-//         }
-//         // Xử lý logic thêm danh mục ở đây
-
-//         // Sau khi xử lý thành công, có thể reset trạng thái form
-//         setCategoryName('');
-//         setErrorMessage('');
-//     };
-
-//     const handleInputChange = (event) => {
-//         setCategoryName(event.target.value);
-//         setErrorMessage('');
-//     };
-
-//     return (
-//         <div className="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-//             <div className="row">
-//                 <ol className="breadcrumb">
-//                     <li><a href="#"><svg className="glyph stroked home"><use xlinkHref="#stroked-home"></use></svg></a></li>
-//                     <li><a href="">Quản lý danh mục</a></li>
-//                     <li className="active">Thêm danh mục</li>
-//                 </ol>
-//             </div>
-            
-//             <div className="row">
-//                 <div className="col-lg-12">
-//                     <h1 className="page-header">Thêm danh mục</h1>
-//                 </div>
-//             </div>
-            
-//             <div className="row">
-//                 <div className="col-lg-12">
-//                     <div className="panel panel-default">
-//                         <div className="panel-body">
-//                             {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-//                             <form role="form" onSubmit={handleSubmit}>
-//                                 <div className="form-group">
-//                                     <label>Tên danh mục:</label>
-//                                     <input
-//                                         required
-//                                         type="text"
-//                                         name="cat_name"
-//                                         className="form-control"
-//                                         placeholder="Tên danh mục..."
-//                                         value={categoryName}
-//                                         onChange={handleInputChange}
-//                                     />
-//                                 </div>
-//                                 <button type="submit" className="btn btn-success">Thêm mới</button>
-//                                 <button type="reset" className="btn btn-default">Làm mới</button>
-//                             </form>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default AddCategory;
-
-
-import React, { useState } from 'react';
-import { addCategory } from '../../services/Api'; 
-
-const AddCategory = () => {
-    const [categoryName, setCategoryName] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-    const [successMessage, setSuccessMessage] = useState('');
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        if (categoryName.trim() === '') {
-            setErrorMessage('Tên danh mục không được để trống!');
-            return;
-        }
-
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const err = categoryNameError(name);
+        if (err) return setNotice({ type: "danger", text: err });
+        setBusy(true);
         try {
-            const response = await addCategory({ cat_name: categoryName }); // Gọi API thêm danh mục
-            if (response.status === 201) { // Kiểm tra kết quả thành công từ API (ví dụ: status code 201)
-                setSuccessMessage('Thêm danh mục thành công!');
-                setCategoryName(''); // Reset trường nhập liệu
-                setErrorMessage('');
-            } else {
-                setErrorMessage('Đã có lỗi xảy ra khi thêm danh mục!');
-            }
-        } catch (error) {
-            console.error('Lỗi khi gọi API:', error);
-            setErrorMessage('Đã có lỗi xảy ra khi thêm danh mục!');
+            await api.addCategory({ name: name.trim() });
+            setNotice({ type: "success", text: `Đã thêm danh mục "${name.trim()}".` });
+            setName("");
+        } catch (er) {
+            setNotice({ type: "danger", text: apiMessage(er, "Không thêm được danh mục.") });
+        } finally {
+            setBusy(false);
         }
-    };
-
-    const handleInputChange = (event) => {
-        setCategoryName(event.target.value);
-        setErrorMessage('');
-        setSuccessMessage('');
-        console.log(setCategoryName);
     };
 
     return (
-        <div className="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-            <div className="row">
-                <ol className="breadcrumb">
-                    <li><a href="#"><svg className="glyph stroked home"><use xlinkHref="#stroked-home"></use></svg></a></li>
-                    <li><a href="">Quản lý danh mục</a></li>
-                    <li className="active">Thêm danh mục</li>
-                </ol>
-            </div>
-            
-            <div className="row">
-                <div className="col-lg-12">
-                    <h1 className="page-header">Thêm danh mục</h1>
-                </div>
-            </div>
-            
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="panel panel-default">
-                        <div className="panel-body">
-                            {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-                            {successMessage && <div className="alert alert-success">{successMessage}</div>}
-                            <form role="form" onSubmit={handleSubmit}>
-                                <div className="form-group">
-                                    <label>Tên danh mục:</label>
-                                    <input
-                                        required
-                                        type="text"
-                                        name="cat_name"
-                                        className="form-control"
-                                        placeholder="Tên danh mục..."
-                                        value={categoryName}
-                                        onChange={handleInputChange}
-                                    />
-                                </div>
-                                <button type="submit" className="btn btn-success">Thêm mới</button>
-                                <button type="reset" className="btn btn-default">Làm mới</button>
-                            </form>
+        <PageShell title="Thêm danh mục" crumbs={[{ label: "Quản lý danh mục", to: "/category" }, { label: "Thêm danh mục" }]}>
+            <div className="panel panel-default">
+                <div className="panel-body">
+                    <Notice notice={notice} />
+                    <form onSubmit={onSubmit} noValidate>
+                        <div className="form-group">
+                            <label htmlFor="add-cat-name">Tên danh mục</label>
+                            <input id="add-cat-name" className="form-control" maxLength={100} placeholder="Tên danh mục..." value={name} onChange={(e) => { setName(e.target.value); setNotice(null); }} />
                         </div>
-                    </div>
+                        <button type="submit" className="btn btn-success" disabled={busy}>
+                            Thêm mới
+                        </button>{" "}
+                        <Link to="/category" className="btn btn-default">
+                            Về danh sách
+                        </Link>
+                    </form>
                 </div>
             </div>
-        </div>
+        </PageShell>
     );
 };
 
 export default AddCategory;
-

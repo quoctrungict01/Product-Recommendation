@@ -43,7 +43,7 @@
 // }
 
 // Frontend/src/redux-setup/reducers/cart.js
-import { ADD_TO_CART, UPDATE_CART, DELETE_ITEM_CART, LOGIN_SUCCESS, LOGOUT } from "../../shared/constants/action-type";
+import { ADD_TO_CART, UPDATE_CART, DELETE_ITEM_CART, REFRESH_CART_ITEMS, CLEAR_CART, LOGIN_SUCCESS, LOGOUT } from "../../shared/constants/action-type";
 
 // Lấy giỏ hàng từ localStorage theo userId
 const loadCartFromStorage = (userId) => {
@@ -90,6 +90,21 @@ export default (state = initState, action) => {
             const newState = updateCart(state, action.payload);
             saveCartToStorage(newState.userId, newState.items);
             return newState;
+        }
+        case CLEAR_CART: {
+            // Đặt hàng thành công: xóa cả giỏ trong state và trong localStorage của tài khoản.
+            saveCartToStorage(state.userId, []);
+            return { ...state, items: [] };
+        }
+        case REFRESH_CART_ITEMS: {
+            const fresh = new Map((action.payload.items || []).map((p) => [p._id, p]));
+            const items = state.items.map((item) => {
+                const p = fresh.get(item._id);
+                if (!p) return item;
+                return { ...item, price: p.price, is_stock: p.is_stock, ...(p.name ? { name: p.name } : {}), ...(p.image ? { image: p.image } : {}) };
+            });
+            saveCartToStorage(state.userId, items);
+            return { ...state, items };
         }
         case DELETE_ITEM_CART: {
             const newState = deleteItemCart(state, action.payload);

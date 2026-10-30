@@ -1,0 +1,34 @@
+/* Khu vực gợi ý trên trang chi tiết: cùng kiểu khối trắng (#product-body, #comment)
+   và thẻ .product-item sẵn có của TrungShop (public/css/home.css, product.css). */
+.fbt-section {
+  background: #fff;
+  border-radius: 3px;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+.fbt-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.fbt-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 5px;
+  transition: opacity .15s;
+}
+.fbt-list.is-loading { opacity: .5; }
+
+.fbt-card { margin: 0 !important; }
+.fbt-card img { object-fit: contain; max-width: 100%; }
+.fbt-card h4 { font-size: 14px; line-height: 1.35; min-height: 38px; margin: 8px 0 4px; }
+.fbt-card p { margin-bottom: 8px; }
+.product-item a.fbt-detail { font-weight: normal; color: #EB1F27; margin-top: auto; }
+.product-item a.fbt-detail:hover { color: #fff; }
+
+/* Chế độ nghiên cứu (?research=1): gọn, chỉ phục vụ kiểm thử */
+.fbt-research { font-size: 13px; border: 1px dashed #999; }
+.fbt-research .btn { margin-left: 6px; }
+.fbt-research-meta, .fbt-research-error { margin-top: 6px; color: #333; }
+.fbt-research-error { color: #EB1F27; }
+.fbt-metrics { margin-top: 6px; padding-top: 6px; border-top: 1px dashed #ddd; font-size: 12px; text-align: left; color: #333; }

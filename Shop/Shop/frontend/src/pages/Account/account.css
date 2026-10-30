@@ -1,0 +1,30 @@
+/* Tài khoản của tôi — cùng phong cách khối trắng/đỏ của TrungShop (cart.css, home.css). */
+.account-box { background: #fff; border-radius: 3px; margin-top: 20px; padding: 15px; }
+.account-box h2 { font-size: 20px; margin: 0 0 12px; }
+.account-tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 2px solid #eb1f27; margin-bottom: 15px; padding: 0; list-style: none; }
+.account-tabs a { display: block; padding: 8px 14px; color: #333; text-decoration: none; border-radius: 3px 3px 0 0; font-size: 14px; }
+.account-tabs a:hover { background: #f5f5f5; text-decoration: none; color: #333; }
+.account-tabs a.active { background: #eb1f27; color: #fff; font-weight: bold; }
+.account-section { border: 1px solid #eee; border-radius: 3px; padding: 15px; margin-bottom: 15px; }
+.account-section h3 { font-size: 16px; font-weight: bold; margin: 0 0 12px; }
+.account-section label { font-size: 14px; margin-bottom: 4px; }
+.account-hint { color: #777; font-size: 13px; margin-top: 4px; }
+.account-error { color: #c60a11; font-size: 13px; margin-top: 4px; }
+.account-btn { background: #eb1f27; border: none; color: #fff; border-radius: 3px; padding: 8px 18px; font-weight: bold; cursor: pointer; }
+.account-btn:hover { background: #c60a11; }
+.account-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.account-btn-secondary { background: #fff; color: #333; border: 1px solid #ccc; border-radius: 3px; padding: 8px 14px; margin-left: 8px; cursor: pointer; }
+.account-btn-secondary:hover { background: #f5f5f5; }
+.order-card { border: 1px solid #eee; border-radius: 3px; margin-bottom: 12px; }
+.order-card-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; background: #fafafa; padding: 8px 12px; border-bottom: 1px solid #eee; font-size: 14px; }
+.order-card-head b { color: #333; }
+.order-status { border-radius: 10px; padding: 2px 10px; font-size: 12px; font-weight: bold; white-space: nowrap; }
+.order-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-bottom: 1px dashed #eee; font-size: 14px; }
+.order-item img { width: 44px; height: 44px; object-fit: contain; }
+.order-item-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.order-card-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; padding: 8px 12px; font-size: 14px; }
+.order-total { color: #eb1f27; font-weight: bold; font-size: 16px; }
+@media (max-width: 575px) {
+  .account-tabs a { padding: 6px 10px; font-size: 13px; }
+  .account-btn-secondary { margin-left: 0; margin-top: 8px; }
+}
